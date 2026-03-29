@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Sudheer Kondapally — Cybersecurity Engineer | DevSecOps | AWS WAF</title>
+<meta name="description" content="Senior Cybersecurity Engineer with 7+ years specializing in AWS WAF, cloud security, and DevSecOps automation across 350+ enterprise AWS accounts.">
+<meta name="keywords" content="Cybersecurity Engineer, AWS WAF, DevSecOps, Terraform, Cloud Security, Splunk, Firewall Manager">
+<meta property="og:title" content="Sai Sudheer Kondapally — Cybersecurity Engineer | DevSecOps | AWS WAF">
+<meta property="og:description" content="Senior Cybersecurity Engineer with 7+ years specializing in AWS WAF, cloud security, and DevSecOps automation across 350+ enterprise AWS accounts.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://og-image.vercel.app/Sai%20Sudheer%20Kondapally.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2304070f'/%3E%3Ctext x='4' y='22' font-family='monospace' font-size='18' fill='%2300e5ff'%3E%3E_%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#04070f;--surface:#080e1a;--surface2:#0d1628;
+  --cyan:#00e5ff;--green:#39ff6a;--orange:#ff6b35;--purple:#c792ea;
+  --text:#e8edf5;--muted:#6b7a96;--dim:#1e2d45;
+  --font-display:'Syne',sans-serif;--font-mono:'JetBrains Mono',monospace;--font-body:'DM Sans',sans-serif;
+  --transition:0.25s ease;--radius:8px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+ul{list-style:none}
+section{padding:100px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--surface)}
+::-webkit-scrollbar-thumb{background:var(--dim);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+
+/* ===== NAV ===== */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;background:rgba(4,7,15,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,229,255,0.06);transition:padding var(--transition)}
+#nav.scrolled{padding:12px 0;backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-logo{font-family:var(--font-mono);font-size:0.9rem;color:var(--text);white-space:nowrap}
+.nav-logo .slash{color:var(--muted)}
+.nav-logo .path{color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-family:var(--font-body);font-size:0.875rem;font-weight:500;color:var(--muted);transition:color var(--transition);position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--cyan);transition:width var(--transition)}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
+.nav-links a.active::after,.nav-links a:hover::after{width:100%}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);transition:all 0.3s ease;border-radius:2px}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0;transform:translateX(-10px)}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(4,7,15,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family:var(--font-display);font-size:2rem;color:var(--muted);transition:color var(--transition)}
+.mobile-nav a:hover{color:var(--cyan)}
+
+/* ===== SECTION LABELS ===== */
+.section-label{font-family:var(--font-mono);font-size:0.75rem;color:var(--cyan);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;opacity:0.8}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--text);margin-bottom:48px;line-height:1.1}
+.section-header{margin-bottom:64px}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ===== HERO ===== */
+#hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%)}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(0,229,255,0.05) 0%,transparent 70%);pointer-events:none}
+#particles{position:absolute;inset:0;pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px;padding-top:80px}
+.status-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(57,255,106,0.08);border:1px solid rgba(57,255,106,0.2);border-radius:100px;padding:8px 16px;margin-bottom:32px;font-family:var(--font-mono);font-size:0.78rem;color:var(--green)}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(57,255,106,0.4);animation:pulse-green 2s ease infinite}
+@keyframes pulse-green{0%,100%{box-shadow:0 0 0 0 rgba(57,255,106,0.4)}50%{box-shadow:0 0 0 6px rgba(57,255,106,0)}}
+.hero-name{font-family:var(--font-display);font-size:clamp(3rem,7vw,5.5rem);font-weight:800;line-height:1.0;margin-bottom:24px;position:relative}
+.hero-name .line1{display:block;color:var(--text)}
+.hero-name .line2{display:block;color:var(--cyan);position:relative}
+.hero-name .line2.glitch{animation:none}
+.hero-name .line2::before,.hero-name .line2::after{content:attr(data-text);position:absolute;left:0;top:0;width:100%;overflow:hidden;clip-path:inset(0 0 65% 0)}
+.hero-name .line2::before{color:var(--cyan);transform:translateX(-2px);animation:glitch-top 4s ease infinite}
+.hero-name .line2::after{clip-path:inset(65% 0 0 0);color:var(--orange);transform:translateX(2px);animation:glitch-bot 4s ease infinite}
+@keyframes glitch-top{0%,90%,100%{opacity:0;transform:translateX(-2px)}92%,96%{opacity:1;transform:translateX(-4px)}94%,98%{opacity:1;transform:translateX(2px)}}
+@keyframes glitch-bot{0%,90%,100%{opacity:0;transform:translateX(2px)}92%,96%{opacity:1;transform:translateX(4px)}94%,98%{opacity:1;transform:translateX(-2px)}}
+.hero-subtitle{font-family:var(--font-mono);font-size:clamp(1rem,2.5vw,1.4rem);color:var(--muted);margin-bottom:20px;min-height:1.8em}
+.typewriter-text{color:var(--cyan)}
+.cursor-block{display:inline-block;width:0.6em;height:1em;background:var(--cyan);vertical-align:text-bottom;animation:blink 1s step-end infinite;margin-left:1px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-desc{font-size:1.05rem;color:var(--muted);max-width:600px;margin-bottom:40px;line-height:1.75}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--cyan);color:var(--bg);font-family:var(--font-mono);font-size:0.875rem;font-weight:600;padding:14px 28px;border-radius:var(--radius);transition:all var(--transition)}
+.btn-primary:hover{background:#33eeff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,229,255,0.25)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(0,229,255,0.4);color:var(--cyan);font-family:var(--font-mono);font-size:0.875rem;padding:14px 28px;border-radius:var(--radius);transition:all var(--transition)}
+.btn-outline:hover{border-color:var(--cyan);background:rgba(0,229,255,0.06);transform:translateY(-2px)}
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--dim);border-radius:var(--radius);overflow:hidden;border:1px solid var(--dim)}
+.stat-item{background:var(--surface);padding:28px 24px;text-align:center}
+.stat-value{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--cyan);display:block;margin-bottom:6px}
+.stat-label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;font-family:var(--font-mono)}
+
+/* ===== ABOUT ===== */
+#about{background:var(--surface)}
+.terminal-window{background:var(--surface2);border:1px solid rgba(0,229,255,0.15);border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.terminal-header{background:#0a1220;padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(0,229,255,0.08)}
+.t-dot{width:12px;height:12px;border-radius:50%}
+.t-dot.red{background:#ff5f56}
+.t-dot.yellow{background:#ffbd2e}
+.t-dot.green{background:#27c93f}
+.t-path{font-family:var(--font-mono);font-size:0.75rem;color:var(--muted);margin-left:8px}
+.terminal-body{padding:24px;font-family:var(--font-mono);font-size:0.82rem;line-height:2;min-height:360px;position:relative}
+.terminal-body::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;border-radius:0 0 var(--radius) var(--radius)}
+.t-line{display:block;white-space:pre-wrap;word-break:break-all}
+.t-prompt::before{content:'$ ';color:var(--green)}
+.t-prompt{color:var(--text)}
+.t-output{color:var(--muted);padding-left:16px}
+.t-cyan{color:var(--cyan)}
+.t-orange{color:var(--orange)}
+.t-purple{color:var(--purple)}
+.t-green{color:var(--green)}
+.t-cursor{display:inline-block;width:0.5em;height:1em;background:var(--green);vertical-align:text-bottom;animation:blink 1s step-end infinite}
+
+/* ===== SKILLS ===== */
+#skills{padding-top:100px}
+.skill-groups{display:flex;flex-direction:column;gap:16px}
+.skill-group{background:var(--surface);border:1px solid var(--dim);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition)}
+.skill-group:hover{border-color:rgba(0,229,255,0.15)}
+.skill-group-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;user-select:none}
+.skill-group-name{font-family:var(--font-mono);font-size:0.85rem;color:var(--text);font-weight:600;display:flex;align-items:center;gap:8px}
+.skill-group-name .sg-arrow{color:var(--cyan)}
+.skill-count{font-size:0.68rem;color:var(--muted);background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.12);border-radius:100px;padding:1px 8px;font-weight:400}
+.skill-arrow{color:var(--muted);font-size:0.7rem;transition:transform 0.3s ease}
+.skill-group.collapsed .skill-arrow{transform:rotate(-90deg)}
+.skill-tags{padding:0 22px 18px;display:flex;flex-wrap:wrap;gap:8px;transition:all 0.3s ease}
+.skill-group.collapsed .skill-tags{display:none}
+.skill-tag{font-family:var(--font-mono);font-size:0.73rem;color:var(--muted);border:1px solid rgba(0,229,255,0.15);background:rgba(0,229,255,0.04);padding:5px 12px;border-radius:4px;transition:all var(--transition);white-space:nowrap}
+.skill-tag:hover,.skill-tag.primary{border-color:var(--cyan);color:var(--cyan);background:rgba(0,229,255,0.1)}
+.skill-tag:hover{transform:translateY(-2px)}
+
+/* ===== EXPERIENCE ===== */
+#experience{background:var(--surface)}
+.timeline-item.current>.timeline-card{border-left:2px solid var(--cyan)}
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--cyan),transparent)}
+.timeline-item{position:relative;margin-bottom:24px}
+.timeline-dot{position:absolute;left:-39px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan);box-shadow:0 0 8px rgba(0,229,255,0.4);transition:all var(--transition);cursor:pointer}
+.timeline-item:hover .timeline-dot{box-shadow:0 0 16px rgba(0,229,255,0.7);background:var(--cyan)}
+.timeline-card{background:var(--surface2);border:1px solid var(--dim);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition);cursor:pointer}
+.timeline-card:hover{border-color:rgba(0,229,255,0.2)}
+.timeline-card-header{padding:22px 24px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.timeline-meta{}
+.timeline-date{font-family:var(--font-mono);font-size:0.72rem;color:var(--muted);margin-bottom:6px;display:block}
+.timeline-role{font-family:var(--font-display);font-size:1.15rem;font-weight:800;color:var(--text);margin-bottom:4px}
+.timeline-company{font-size:0.85rem;color:var(--cyan);font-weight:500}
+.timeline-expand{color:var(--muted);font-size:0.7rem;transition:transform 0.3s ease;flex-shrink:0;padding-top:4px}
+.timeline-item.open .timeline-expand{transform:rotate(180deg)}
+.timeline-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+.timeline-item.open .timeline-body{max-height:1000px}
+.timeline-bullets{padding:0 24px 20px}
+.timeline-bullets li{font-size:0.875rem;color:var(--muted);padding:6px 0;padding-left:16px;position:relative;line-height:1.6}
+.timeline-bullets li::before{content:'▸';position:absolute;left:0;color:var(--cyan)}
+.tech-pills{display:flex;flex-wrap:wrap;gap:6px;padding:0 24px 20px}
+.tech-pill{font-family:var(--font-mono);font-size:0.7rem;color:var(--muted);border:1px solid var(--dim);background:rgba(255,255,255,0.02);padding:3px 10px;border-radius:3px}
+
+/* ===== PIPELINE ===== */
+#pipeline{background:var(--bg)}
+.pipeline-desc{font-size:0.95rem;color:var(--muted);line-height:1.75;max-width:640px;margin-top:-32px;margin-bottom:48px}
+.pipeline-wrapper{background:var(--surface);border:1px solid var(--dim);border-radius:12px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5)}
+.pipeline-rail-hdr{background:#070d1a;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,229,255,0.07)}
+.rail-branch{font-family:var(--font-mono);font-size:0.72rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.branch-icon{color:var(--green)}
+.branch-name{color:var(--cyan)}
+.rail-commit{font-family:var(--font-mono);font-size:0.68rem;color:var(--dim)}
+.rail-sdot{width:8px;height:8px;border-radius:50%;background:var(--dim);transition:all 0.4s ease}
+.rail-sdot.running{background:var(--orange);box-shadow:0 0 0 0 rgba(255,107,53,0.4);animation:sdot-pulse 1.4s ease infinite}
+.rail-sdot.passed{background:var(--green);box-shadow:0 0 8px rgba(57,255,106,0.6);animation:none}
+@keyframes sdot-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,0.4)}50%{box-shadow:0 0 0 5px rgba(255,107,53,0)}}
+.pipeline-body{padding:48px 40px 36px;overflow-x:auto}
+.pipeline-track{display:flex;align-items:center;min-width:860px}
+/* Stage node */
+.pipe-stage{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;width:100px;position:relative;cursor:default}
+.stage-node{width:58px;height:58px;border-radius:50%;border:2px solid var(--dim);background:rgba(8,14,26,0.9);display:flex;align-items:center;justify-content:center;font-size:1.2rem;position:relative;z-index:2;transition:border-color 0.4s ease,box-shadow 0.4s ease,opacity 0.4s ease;opacity:0.35}
+.stage-ring{position:absolute;inset:-6px;border-radius:50%;border:2px dashed transparent;pointer-events:none;transition:border-color 0.4s ease}
+/* Stage states */
+.pipe-stage.idle .stage-node{border-color:var(--dim);opacity:0.35}
+.pipe-stage.running .stage-node{border-color:var(--cyan);opacity:1;animation:node-pulse 1.2s ease infinite}
+@keyframes node-pulse{0%,100%{box-shadow:0 0 8px rgba(0,229,255,0.2)}50%{box-shadow:0 0 22px rgba(0,229,255,0.55)}}
+.pipe-stage.sec-check .stage-node{border-color:var(--orange);opacity:1;box-shadow:0 0 16px rgba(255,107,53,0.45)}
+.pipe-stage.sec-check .stage-ring{border-color:rgba(255,107,53,0.55);animation:ring-spin 1.6s linear infinite}
+@keyframes ring-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.pipe-stage.pass .stage-node{border-color:var(--green);opacity:1;box-shadow:0 0 14px rgba(57,255,106,0.4)}
+.pipe-stage.sec-pass .stage-node{border-color:var(--cyan);opacity:1;box-shadow:0 0 14px rgba(0,229,255,0.45)}
+.pipe-stage.sec-pass .stage-ring{border-color:transparent;animation:none}
+/* Stage label + badge */
+.stage-label{font-family:var(--font-mono);font-size:0.66rem;color:var(--muted);text-align:center;transition:color 0.4s ease;white-space:nowrap}
+.pipe-stage.pass .stage-label,.pipe-stage.sec-pass .stage-label,.pipe-stage.running .stage-label,.pipe-stage.sec-check .stage-label{color:var(--text)}
+.stage-badge{font-family:var(--font-mono);font-size:0.54rem;letter-spacing:0.07em;padding:2px 8px;border-radius:100px;opacity:0;transition:opacity 0.5s ease;white-space:nowrap}
+.pipe-stage.pass .stage-badge,.pipe-stage.sec-pass .stage-badge{opacity:1}
+.stage-badge.sec{background:rgba(0,229,255,0.07);color:var(--cyan);border:1px solid rgba(0,229,255,0.2)}
+.stage-badge.bld{background:rgba(57,255,106,0.06);color:var(--green);border:1px solid rgba(57,255,106,0.18)}
+.stage-badge.dep{background:rgba(199,146,234,0.07);color:var(--purple);border:1px solid rgba(199,146,234,0.2)}
+.stage-badge.trg{background:rgba(107,122,150,0.08);color:var(--muted);border:1px solid var(--dim)}
+.stage-badge.mon{background:rgba(57,255,106,0.06);color:var(--green);border:1px solid rgba(57,255,106,0.18)}
+/* Tooltip */
+.stage-tip{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid rgba(0,229,255,0.18);border-radius:6px;padding:10px 14px;min-width:148px;font-family:var(--font-mono);font-size:0.63rem;color:var(--muted);opacity:0;pointer-events:none;transition:opacity 0.2s ease;z-index:30;line-height:1.9}
+.stage-tip strong{display:block;color:var(--cyan);margin-bottom:3px;font-size:0.68rem}
+.pipe-stage:hover .stage-tip{opacity:1}
+/* Connector */
+.pipe-connector{flex:1;height:2px;background:rgba(30,45,69,0.8);position:relative;min-width:24px;max-width:56px;overflow:visible}
+.conn-fill{position:absolute;left:0;top:0;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),rgba(0,229,255,0.5));transition:none}
+.conn-fill.go{transition:width 0.55s ease;width:100%}
+.conn-pkt{position:absolute;top:50%;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 6px var(--cyan),0 0 12px rgba(0,229,255,0.4);transform:translateY(-50%);left:-7px;opacity:0}
+.conn-pkt.go{animation:pkt-go 0.75s ease forwards}
+@keyframes pkt-go{0%{left:-7px;opacity:1}80%{opacity:1}100%{left:calc(100% + 7px);opacity:0}}
+/* Status bar */
+.pipeline-statusbar{padding:18px 40px 24px;border-top:1px solid var(--dim);display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:rgba(8,14,26,0.5)}
+.pipe-log{font-family:var(--font-mono);font-size:0.72rem;flex:1;min-height:1.2em;color:var(--dim)}
+.pipe-log.t-run{color:var(--muted)}
+.pipe-log.t-sec{color:var(--orange)}
+.pipe-log.t-ok{color:var(--green)}
+.pipe-result{font-family:var(--font-mono);font-size:0.72rem;font-weight:600;color:transparent;transition:color 0.4s ease;flex-shrink:0;min-width:80px;text-align:right}
+.btn-replay{font-family:var(--font-mono);font-size:0.7rem;color:var(--muted);background:transparent;border:1px solid var(--dim);padding:7px 16px;border-radius:4px;cursor:pointer;transition:all 0.25s ease;flex-shrink:0}
+.btn-replay:hover{border-color:var(--cyan);color:var(--cyan)}
+/* Legend */
+.pipe-legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.legend-item{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.62rem;color:var(--muted)}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.legend-dot.lc{background:var(--cyan)}
+.legend-dot.lo{background:var(--orange)}
+.legend-dot.lg{background:var(--green)}
+.legend-dot.lp{background:var(--purple)}
+@media(max-width:768px){
+  .pipeline-body{padding:32px 20px 24px}
+  .pipeline-statusbar{padding:16px 20px 22px}
+  .pipe-legend{gap:12px}
+}
+
+/* ===== PIPELINE V2 (multi-pipeline tabs) ===== */
+.pl-intro{font-size:0.95rem;color:var(--muted);line-height:1.75;max-width:640px;margin-top:-28px;margin-bottom:36px}
+.pl-tab-bar{display:flex;gap:7px;margin-bottom:18px;flex-wrap:wrap}
+.pl-tab-btn{font-family:var(--font-mono);font-size:0.7rem;padding:11px 15px;border-radius:6px;border:1px solid var(--dim);background:var(--surface);color:var(--muted);cursor:pointer;transition:all 0.25s ease;display:flex;flex-direction:column;gap:4px;text-align:left;flex:1;min-width:155px}
+.pl-tab-btn:hover{border-color:rgba(0,229,255,0.3);color:var(--text)}
+.pl-tab-btn.pl-active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,229,255,0.04);box-shadow:inset 0 0 0 1px rgba(0,229,255,0.07)}
+.pl-tab-name{font-size:0.71rem;font-weight:600;letter-spacing:0.02em}
+.pl-tab-sub{font-size:0.6rem;color:var(--muted);opacity:0.65}
+.pl-tab-btn.pl-active .pl-tab-sub{color:rgba(0,229,255,0.55)}
+.pl-tab-num{font-size:0.57rem;color:var(--dim)}
+.pl-tab-btn.pl-active .pl-tab-num{color:rgba(0,229,255,0.4)}
+.pl-panels{position:relative}
+.pl-panel{display:none}
+.pl-panel.pl-active{display:block}
+.pl-wrapper{background:var(--surface);border:1px solid var(--dim);border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.pl-rail{background:#060c18;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,229,255,0.06);gap:14px}
+.pl-rail-ctx{font-family:var(--font-mono);font-size:0.63rem;color:var(--muted);display:flex;align-items:center;gap:8px;flex-shrink:0}
+.pl-rail-branch{color:var(--cyan)}
+.pl-rail-commit{font-family:var(--font-mono);font-size:0.61rem;color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.pl-sdot{width:8px;height:8px;border-radius:50%;background:var(--dim);transition:all 0.4s ease;flex-shrink:0}
+.pl-sdot.pl-sdot-run{background:var(--orange);animation:plsd-pulse 1.4s ease infinite}
+.pl-sdot.pl-sdot-ok{background:var(--green);box-shadow:0 0 8px rgba(57,255,106,0.6);animation:none}
+@keyframes plsd-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,0.4)}50%{box-shadow:0 0 0 5px rgba(255,107,53,0)}}
+.pl-body{padding:42px 30px 28px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.pl-body::-webkit-scrollbar{height:4px}
+.pl-body::-webkit-scrollbar-track{background:transparent}
+.pl-body::-webkit-scrollbar-thumb{background:rgba(0,229,255,0.2);border-radius:2px}
+.pl-track{display:flex;align-items:center;min-width:940px}
+.p-stage{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;width:86px;position:relative}
+.p-node{width:50px;height:50px;border-radius:50%;border:2px solid var(--dim);background:rgba(6,12,24,0.95);display:flex;align-items:center;justify-content:center;font-size:1rem;position:relative;z-index:2;transition:border-color 0.35s ease,box-shadow 0.35s ease,opacity 0.35s ease;opacity:0.25}
+.p-ring{position:absolute;inset:-6px;border-radius:50%;border:2px dashed transparent;pointer-events:none;transition:border-color 0.35s ease}
+.p-stage.idle .p-node{opacity:0.25;border-color:var(--dim)}
+.p-stage.plr .p-node{opacity:1;border-color:var(--cyan);animation:pl-node-glow 1.2s ease infinite}
+@keyframes pl-node-glow{0%,100%{box-shadow:0 0 8px rgba(0,229,255,0.15)}50%{box-shadow:0 0 24px rgba(0,229,255,0.55)}}
+.p-stage.pls .p-node{opacity:1;border-color:var(--orange);box-shadow:0 0 16px rgba(255,107,53,0.45)}
+.p-stage.pls .p-ring{border-color:rgba(255,107,53,0.52);animation:pl-ring-spin 1.5s linear infinite}
+@keyframes pl-ring-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.p-stage.plp .p-node{opacity:1;border-color:var(--green);box-shadow:0 0 12px rgba(57,255,106,0.4)}
+.p-stage.plsp .p-node{opacity:1;border-color:var(--cyan);box-shadow:0 0 14px rgba(0,229,255,0.45)}
+.p-stage.plsp .p-ring{border-color:transparent;animation:none}
+.p-lbl{font-family:var(--font-mono);font-size:0.6rem;color:var(--muted);text-align:center;transition:color 0.35s ease;white-space:nowrap;line-height:1.3}
+.p-stage.plr .p-lbl,.p-stage.pls .p-lbl,.p-stage.plp .p-lbl,.p-stage.plsp .p-lbl{color:var(--text)}
+.p-bdg{font-family:var(--font-mono);font-size:0.49rem;letter-spacing:0.09em;padding:2px 5px;border-radius:100px;opacity:0;transition:opacity 0.5s ease;white-space:nowrap}
+.p-stage.plp .p-bdg,.p-stage.plsp .p-bdg{opacity:1}
+.p-bdg.sec{background:rgba(0,229,255,0.07);color:var(--cyan);border:1px solid rgba(0,229,255,0.2)}
+.p-bdg.bld{background:rgba(57,255,106,0.05);color:var(--green);border:1px solid rgba(57,255,106,0.15)}
+.p-bdg.dep{background:rgba(199,146,234,0.06);color:var(--purple);border:1px solid rgba(199,146,234,0.18)}
+.p-bdg.trg{background:rgba(107,122,150,0.06);color:var(--muted);border:1px solid var(--dim)}
+.p-bdg.mon{background:rgba(57,255,106,0.05);color:var(--green);border:1px solid rgba(57,255,106,0.15)}
+.p-bdg.scn{background:rgba(255,107,53,0.06);color:var(--orange);border:1px solid rgba(255,107,53,0.2)}
+.p-bdg.ptch{background:rgba(255,189,46,0.06);color:#ffbd2e;border:1px solid rgba(255,189,46,0.18)}
+.p-tip{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid rgba(0,229,255,0.15);border-radius:6px;padding:10px 13px;min-width:150px;font-family:var(--font-mono);font-size:0.59rem;color:var(--muted);opacity:0;pointer-events:none;transition:opacity 0.2s ease;z-index:30;line-height:1.95}
+.p-tip strong{display:block;color:var(--cyan);margin-bottom:3px;font-size:0.64rem}
+.p-stage:hover .p-tip{opacity:1}
+.p-conn{flex:1;height:2px;background:rgba(30,45,69,0.7);position:relative;min-width:14px;max-width:38px;overflow:visible}
+.p-cfill{position:absolute;left:0;top:0;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),rgba(0,229,255,0.4));transition:none}
+.p-cfill.go{transition:width 0.5s ease;width:100%}
+.p-cpkt{position:absolute;top:50%;width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 6px var(--cyan),0 0 10px rgba(0,229,255,0.35);transform:translateY(-50%);left:-6px;opacity:0}
+.p-cpkt.go{animation:pl-pkt-fly 0.65s ease forwards}
+@keyframes pl-pkt-fly{0%{left:-6px;opacity:1}80%{opacity:1}100%{left:calc(100% + 6px);opacity:0}}
+.pl-statusbar{padding:14px 30px 20px;border-top:1px solid var(--dim);display:flex;align-items:center;gap:12px;background:rgba(6,12,24,0.3);flex-wrap:wrap}
+.pl-log{font-family:var(--font-mono);font-size:0.67rem;flex:1;min-height:1.2em;color:var(--dim)}
+.pl-log.lr{color:var(--muted)}.pl-log.ls{color:var(--orange)}.pl-log.lok{color:var(--green)}.pl-log.lwarn{color:#ffbd2e}
+.pl-result{font-family:var(--font-mono);font-size:0.67rem;font-weight:600;color:transparent;flex-shrink:0;transition:color 0.4s ease}
+.btn-pl-replay{font-family:var(--font-mono);font-size:0.66rem;color:var(--muted);background:transparent;border:1px solid var(--dim);padding:6px 13px;border-radius:4px;cursor:pointer;transition:all 0.25s ease;flex-shrink:0}
+.btn-pl-replay:hover{border-color:var(--cyan);color:var(--cyan)}
+@media(max-width:768px){
+  .pl-tab-bar{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .pl-tab-btn{flex-shrink:0;min-width:148px}
+  .pl-body{padding:28px 14px 22px}
+  .pl-statusbar{padding:11px 14px 16px}
+  .pl-rail{padding:10px 14px}
+}
+
+/* ===== NEW SECTIONS CSS ===== */
+/* stats 6-col override */
+.stats-strip{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))!important}
+.stat-label{font-size:0.68rem}
+/* hero proof list */
+.hero-proof{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:10px}
+.hero-proof li{font-size:0.88rem;color:var(--muted);line-height:1.5;padding-left:20px;position:relative}
+.hero-proof li::before{content:'✓';position:absolute;left:0;color:var(--green);font-size:0.8rem;font-family:var(--font-mono)}
+
+/* WHY ME */
+#why-me{background:var(--surface2)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.why-card{background:var(--surface);border:1px solid var(--dim);border-radius:12px;padding:32px;transition:border-color 0.3s ease,transform 0.3s ease;display:flex;flex-direction:column}
+.why-card:hover{border-color:rgba(0,229,255,0.25);transform:translateY(-3px)}
+.why-card-num{font-family:var(--font-mono);font-size:0.62rem;color:var(--cyan);letter-spacing:0.14em;margin-bottom:14px;opacity:0.6}
+.why-card-title{font-family:var(--font-display);font-size:1.05rem;font-weight:800;color:var(--text);margin-bottom:12px;line-height:1.3}
+.why-card-body{font-size:0.875rem;color:var(--muted);line-height:1.85;flex:1;margin-bottom:18px}
+.why-card-proof{font-family:var(--font-mono);font-size:0.71rem;color:var(--cyan);border-top:1px solid var(--dim);padding-top:14px;line-height:1.6}
+.why-card-proof span{opacity:0.5;margin-right:4px}
+
+/* CASE STUDIES */
+#case-studies{background:var(--bg)}
+.cs-intro{font-size:0.95rem;color:var(--muted);line-height:1.75;max-width:580px;margin-top:-28px;margin-bottom:48px}
+.cs-grid{display:flex;flex-direction:column;gap:28px}
+.cs-card{background:var(--surface);border:1px solid var(--dim);border-radius:12px;overflow:hidden;transition:border-color 0.3s ease}
+.cs-card:hover{border-color:rgba(0,229,255,0.2)}
+.cs-card-top{padding:28px 36px 22px;border-bottom:1px solid var(--dim);display:flex;align-items:flex-start;gap:22px}
+.cs-num{font-family:var(--font-mono);font-size:2.2rem;font-weight:800;color:var(--dim);flex-shrink:0;line-height:1;user-select:none}
+.cs-hd{flex:1}
+.cs-tag{font-family:var(--font-mono);font-size:0.61rem;letter-spacing:0.1em;color:var(--cyan);background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.18);padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:10px}
+.cs-title{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:var(--text);line-height:1.25}
+.cs-body{display:grid;grid-template-columns:repeat(3,1fr)}
+.cs-block{padding:22px 28px;border-right:1px solid var(--dim)}
+.cs-block:last-child{border-right:none}
+.cs-block-lbl{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.14em;color:var(--muted);text-transform:uppercase;margin-bottom:9px;opacity:0.6}
+.cs-block-txt{font-size:0.84rem;color:var(--muted);line-height:1.78}
+.cs-result{padding:18px 36px;background:rgba(57,255,106,0.04);border-top:1px solid rgba(57,255,106,0.1);display:flex;align-items:flex-start;gap:10px}
+.cs-result-mark{color:var(--green);font-family:var(--font-mono);font-size:0.8rem;flex-shrink:0;padding-top:2px}
+.cs-result-text{font-family:var(--font-mono);font-size:0.73rem;color:var(--green);line-height:1.65}
+
+/* CAPABILITIES */
+#capabilities{background:var(--bg)}
+.cap-intro{font-size:0.95rem;color:var(--muted);line-height:1.75;max-width:580px;margin-top:-28px;margin-bottom:48px}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cap-card{background:var(--surface);border:1px solid var(--dim);border-radius:12px;padding:26px;transition:border-color 0.3s ease,transform 0.3s ease}
+.cap-card:hover{border-color:rgba(0,229,255,0.3);transform:translateY(-3px)}
+.cap-icon-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.cap-icon{width:38px;height:38px;border-radius:8px;background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.14);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cap-title{font-family:var(--font-display);font-size:0.92rem;font-weight:800;color:var(--cyan)}
+.cap-body{font-size:0.82rem;color:var(--muted);line-height:1.82}
+.cap-tools{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.cap-tool{font-family:var(--font-mono);font-size:0.56rem;color:var(--dim);border:1px solid var(--dim);padding:2px 7px;border-radius:100px}
+
+/* HOW I THINK */
+#how-i-think{background:var(--surface2)}
+.think-intro{font-size:0.95rem;color:var(--muted);line-height:1.75;max-width:580px;margin-top:-28px;margin-bottom:48px}
+.think-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.think-card{background:var(--bg);border:1px solid var(--dim);border-radius:12px;padding:30px;position:relative;overflow:hidden;transition:border-color 0.3s ease}
+.think-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--purple))}
+.think-card:hover{border-color:rgba(0,229,255,0.25)}
+.think-vs{font-family:var(--font-mono);font-size:0.68rem;color:var(--cyan);letter-spacing:0.06em;margin-bottom:13px;opacity:0.75}
+.think-title{font-family:var(--font-display);font-size:1rem;font-weight:800;color:var(--text);margin-bottom:14px;line-height:1.3}
+.think-body{font-size:0.85rem;color:var(--muted);line-height:1.82}
+
+/* CONTACT CTA additions */
+.cta-roles{background:var(--surface2);border:1px solid var(--dim);border-radius:12px;padding:28px 32px;margin-bottom:32px}
+.cta-roles-title{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;margin-bottom:16px;opacity:0.7}
+.cta-roles-list{display:flex;flex-wrap:wrap;gap:10px}
+.cta-role-tag{font-family:var(--font-mono);font-size:0.73rem;color:var(--text);background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.18);border-radius:6px;padding:7px 14px}
+.cta-avail{font-family:var(--font-mono);font-size:0.76rem;color:var(--green);margin-bottom:28px;display:flex;align-items:center;gap:8px}
+.cta-avail::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex-shrink:0}
+
+/* Responsive new sections */
+@media(max-width:768px){
+  .why-grid{grid-template-columns:1fr}
+  .cs-body{grid-template-columns:1fr}
+  .cs-block{border-right:none;border-bottom:1px solid var(--dim)}
+  .cs-block:last-child{border-bottom:none}
+  .cs-card-top{flex-direction:column;gap:6px;padding:22px}
+  .cs-result{padding:16px 22px}
+  .cs-num{font-size:1.5rem}
+  .cap-grid{grid-template-columns:1fr}
+  .think-grid{grid-template-columns:1fr}
+}
+@media(max-width:1100px) and (min-width:769px){
+  .cap-grid{grid-template-columns:repeat(2,1fr)}
+  .think-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ===== RESEARCH ===== */
+#research{}
+.research-card{position:relative;background:var(--surface);border-radius:12px;overflow:hidden;padding:48px;margin-bottom:48px}
+.research-card::before{content:'';position:absolute;inset:0;border-radius:12px;padding:1px;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--orange),var(--cyan));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:border-spin 4s linear infinite;background-size:300% 300%}
+@keyframes border-spin{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.research-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(199,146,234,0.1);border:1px solid rgba(199,146,234,0.3);border-radius:100px;padding:6px 14px;font-family:var(--font-mono);font-size:0.72rem;color:var(--purple);margin-bottom:24px}
+.research-title{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--cyan);margin-bottom:20px;line-height:1.2}
+.research-summary{font-size:0.95rem;color:var(--muted);line-height:1.8;margin-bottom:36px;max-width:700px}
+.research-findings{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+.finding-item{background:var(--surface2);border:1px solid var(--dim);border-radius:var(--radius);padding:20px}
+.finding-item p{font-size:0.85rem;color:var(--muted);line-height:1.6}
+.finding-item p strong{display:block;color:var(--cyan);font-family:var(--font-mono);font-size:0.8rem;margin-bottom:6px}
+.research-tech{display:flex;flex-wrap:wrap;gap:8px}
+.edu-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.edu-card{background:var(--surface);border:1px solid var(--dim);border-radius:var(--radius);padding:28px;transition:border-color var(--transition)}
+.edu-card:hover{border-color:rgba(0,229,255,0.2)}
+.edu-degree{font-family:var(--font-display);font-size:1rem;font-weight:800;color:var(--text);margin-bottom:8px}
+.edu-school{font-family:var(--font-mono);font-size:0.78rem;color:var(--cyan);margin-bottom:6px}
+.edu-dates{font-family:var(--font-mono);font-size:0.72rem;color:var(--muted)}
+
+/* ===== CONTACT ===== */
+#contact{background:var(--surface)}
+.contact-subtitle{font-size:0.95rem;color:var(--muted);margin-top:-32px;margin-bottom:48px;max-width:500px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-links{display:flex;flex-direction:column;gap:4px}
+.contact-row{display:flex;align-items:center;gap:16px;padding:18px 16px;border:1px solid var(--dim);border-radius:var(--radius);transition:all var(--transition);color:var(--muted);font-size:0.9rem}
+.contact-row:hover{border-color:rgba(0,229,255,0.3);color:var(--cyan);transform:translateX(4px);background:rgba(0,229,255,0.03)}
+.contact-row svg{flex-shrink:0;color:var(--cyan)}
+.contact-row-info{flex:1}
+.contact-row-label{font-family:var(--font-mono);font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:2px}
+.contact-row-value{font-size:0.85rem;color:var(--text)}
+.contact-row:hover .contact-row-value{color:var(--cyan)}
+.contact-row-arrow{font-size:0.8rem;color:var(--muted);transition:color var(--transition)}
+.contact-row:hover .contact-row-arrow{color:var(--cyan)}
+.contact-terminal{background:var(--surface2);border:1px solid rgba(0,229,255,0.15);border-radius:var(--radius);overflow:hidden}
+.contact-terminal .terminal-header{background:#0a1220}
+.contact-form{padding:24px}
+.form-group{margin-bottom:18px}
+.form-label{font-family:var(--font-mono);font-size:0.72rem;color:var(--muted);display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.08em}
+.form-label::before{content:'> ';color:var(--green)}
+.form-input,.form-textarea{width:100%;background:rgba(0,229,255,0.03);border:1px solid rgba(0,229,255,0.1);border-radius:4px;padding:11px 14px;color:var(--text);font-family:var(--font-mono);font-size:0.82rem;outline:none;transition:border-color var(--transition);resize:vertical}
+.form-input:focus,.form-textarea:focus{border-color:rgba(0,229,255,0.4)}
+.form-textarea{min-height:100px}
+.btn-send{width:100%;background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.3);color:var(--cyan);font-family:var(--font-mono);font-size:0.82rem;padding:13px;border-radius:4px;cursor:pointer;transition:all var(--transition);display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-send:hover{background:rgba(0,229,255,0.18);border-color:var(--cyan)}
+
+/* ===== CERTIFICATIONS ===== */
+#certs{padding:56px 0;background:var(--surface2);border-top:1px solid var(--dim);border-bottom:1px solid var(--dim)}
+.certs-label{font-family:var(--font-mono);font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.15em;text-align:center;margin-bottom:28px;opacity:0.6}
+.certs-strip{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.cert-badge{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid rgba(0,229,255,0.18);border-radius:var(--radius);padding:14px 20px;transition:all var(--transition);min-width:220px}
+.cert-badge:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,229,255,0.12)}
+.cert-icon{width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,rgba(0,229,255,0.15),rgba(0,229,255,0.05));display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.cert-info{}
+.cert-name{font-family:var(--font-mono);font-size:0.72rem;color:var(--text);font-weight:600;display:block;margin-bottom:2px}
+.cert-issuer{font-size:0.68rem;color:var(--muted);font-family:var(--font-mono)}
+
+/* ===== FOOTER ===== */
+footer{padding:32px 0;text-align:center;border-top:1px solid var(--dim)}
+footer p{font-family:var(--font-mono);font-size:0.75rem;color:var(--muted)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  section{padding:64px 0}
+  #nav .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-ctas{flex-direction:column;align-items:flex-start}
+  .btn-primary,.btn-outline{width:auto}
+  .stats-strip{grid-template-columns:1fr 1fr}
+  .research-findings{grid-template-columns:1fr}
+  .edu-cards{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .timeline{padding-left:20px}
+  .timeline-dot{left:-27px}
+  .timeline-card-header{flex-direction:column}
+  .section-title{font-size:clamp(1.6rem,5vw,2.2rem)}
+  .research-card{padding:28px}
+  .hero-content{padding-top:100px}
+}
+@media(max-width:375px){
+  .stats-strip{grid-template-columns:1fr 1fr}
+  .stat-item{padding:20px 12px}
+  .stat-value{font-size:1.5rem}
+  .hero-name{font-size:clamp(2.2rem,9vw,3rem)}
+}
+@media(max-width:768px){
+  .certs-strip{flex-direction:column;align-items:center}
+  .cert-badge{width:100%;max-width:340px}
+}
+
+/* ===== REDUCED MOTION ===== */
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .reveal.visible{opacity:1;transform:none}
+  @keyframes pulse-green{0%,100%{box-shadow:0 0 0 2px rgba(57,255,106,0.4)}}
+  @keyframes glitch-top{0%,100%{opacity:0}}
+  @keyframes glitch-bot{0%,100%{opacity:0}}
+  @keyframes border-spin{0%,100%{background-position:0% 50%}}
+  .cursor-block,.t-cursor{animation:none;opacity:1}
+  .status-dot{animation:none;box-shadow:0 0 0 2px rgba(57,255,106,0.5)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo"><span class="slash">~/</span><span class="path">sai-sudheer</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#why-me">Why Me</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#why-me" class="mobile-link">Why Me</a>
+  <a href="#case-studies" class="mobile-link">Case Studies</a>
+  <a href="#pipeline" class="mobile-link">Pipeline</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <canvas id="particles"></canvas>
+  <div class="hero-content">
+    <div class="status-badge reveal">
+      <span class="status-dot"></span>
+      // Available now for immediate impact
+    </div>
+    <h1 class="hero-name reveal">
+      <span class="line1">Sai Sudheer</span>
+      <span class="line2" data-text="Kondapally">Kondapally</span>
+    </h1>
+    <div class="hero-subtitle reveal">
+      <span class="typewriter-text" id="typewriter"></span><span class="cursor-block" id="hero-cursor"></span>
+    </div>
+    <ul class="hero-proof reveal">
+      <li>Deployed AWS WAF across 350+ accounts via Firewall Manager — one policy change, organization-wide coverage</li>
+      <li>Reduced WAF false positives 30% through systematic Splunk-driven tuning loops</li>
+      <li>Cut manual security configuration work 50% by writing every WAF rule, IP set, and policy as Terraform</li>
+    </ul>
+    <div class="hero-ctas reveal">
+      <a href="#case-studies" class="btn-primary">▶ View Case Studies</a>
+      <a href="./resume.pdf" class="btn-outline" title="Download Resume PDF" download>↓ Download Resume</a>
+    </div>
+    <div class="stats-strip reveal">
+      <div class="stat-item"><span class="stat-value" data-count="7" data-suffix="+">0</span><span class="stat-label">Years in Production Security</span></div>
+      <div class="stat-item"><span class="stat-value" data-count="350" data-suffix="+">0</span><span class="stat-label">AWS Accounts Under WAF Policy</span></div>
+      <div class="stat-item"><span class="stat-value" data-count="30" data-suffix="%">0</span><span class="stat-label">WAF False Positive Reduction</span></div>
+      <div class="stat-item"><span class="stat-value" data-count="50" data-suffix="%">0</span><span class="stat-label">Security Config Automated</span></div>
+      <div class="stat-item"><span class="stat-value" data-count="0" data-suffix="">0</span><span class="stat-label">Breaches on Protected Accounts</span></div>
+      <div class="stat-item"><span class="stat-value" data-count="3" data-suffix="">0</span><span class="stat-label">Industries Secured</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">01 // About</div>
+      <h2 class="section-title">whoami</h2>
+    </div>
+    <div class="terminal-window reveal" id="terminal-window">
+      <div class="terminal-header">
+        <span class="t-dot red"></span>
+        <span class="t-dot yellow"></span>
+        <span class="t-dot green"></span>
+        <span class="t-path">sai@portfolio:~$</span>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <!-- typed by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section id="why-me">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">// Why This Engineer</div>
+      <h2 class="section-title">What Sets Me Apart</h2>
+    </div>
+    <div class="why-grid">
+
+      <div class="why-card reveal">
+        <div class="why-card-num">01 / PROBLEM SOLVED</div>
+        <div class="why-card-title">I've solved the false positive problem</div>
+        <div class="why-card-body">Security fails when it blocks real users. I built a repeatable tuning loop: shadow mode → Splunk baseline → precision rules. Result: &lt;1% false positives without weakening protection.</div>
+        <div class="why-card-proof"><span>→</span> Jolttek Inc: 30% FP reduction · SOC triage workload down 30% · zero legitimate user impact in final 8 months</div>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-card-num">02 / ARCHITECTURE APPROACH</div>
+        <div class="why-card-title">I deploy security as infrastructure, not afterthought</div>
+        <div class="why-card-body">Security shouldn't depend on people remembering steps. Every WAF rule, IP set, and Shield policy I write is Terraform: version-controlled, peer-reviewed, reproducible. New accounts inherit full protection on creation. Drift doesn't happen.</div>
+        <div class="why-card-proof"><span>→</span> Jolttek Inc: Terraform modules enforcing WAF v2 across 350+ accounts · CloudFront + ALB + Route 53 scope</div>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-card-num">03 / DETECTION → RESPONSE</div>
+        <div class="why-card-title">I connect detection to action, not just dashboards</div>
+        <div class="why-card-body">Dashboards don't solve incidents — systems do. I wire WAF events → Splunk → ServiceNow → engineer in under 15 minutes. Detection without automated response is just expensive logging. The loop closes every time, with a ticket that proves it.</div>
+        <div class="why-card-proof"><span>→</span> Jolttek + Infoswift: ServiceNow integration cut triage workload 30% · HIPAA PHI access fully audited</div>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-card-num">04 / RESEARCH EDGE</div>
+        <div class="why-card-title">I'm researching what WAFs can't do yet</div>
+        <div class="why-card-body">Most WAFs fail on behavioral threats — slow-rate attacks, credential stuffing, adversarial payloads that evade signatures. My doctoral research builds ML models that close this gap: 30–40% FP reduction, full detection coverage. I don't just implement today's tools. I understand where they break.</div>
+        <div class="why-card-proof"><span>→</span> DBA Cybersecurity (in progress) · Dissertation: AI-Enabled WAFs · scikit-learn + TensorFlow prototypes</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">// What I Deliver</div>
+      <h2 class="section-title">Capabilities</h2>
+    </div>
+    <p class="cap-intro reveal">Not a list of tools — a map of real outcomes. Each capability below represents a class of business problem I've solved in production environments.</p>
+    <div class="cap-grid">
+
+      <div class="cap-card reveal">
+        <div class="cap-icon-row">
+          <div class="cap-icon">🛡</div>
+          <div class="cap-title">WAF Architecture at Scale</div>
+        </div>
+        <div class="cap-body">Design, deploy, and maintain WAF policies across hundreds of AWS accounts without manual touch points. Rules are Terraform, coverage is automatic, drift is impossible. I've done this at 350+ accounts with zero exceptions to the process.</div>
+        <div class="cap-tools">
+          <span class="cap-tool">AWS WAF v2</span><span class="cap-tool">Firewall Manager</span><span class="cap-tool">Shield Advanced</span><span class="cap-tool">Bot Control</span><span class="cap-tool">Terraform</span>
+        </div>
+      </div>
+
+      <div class="cap-card reveal">
+        <div class="cap-icon-row">
+          <div class="cap-icon">📉</div>
+          <div class="cap-title">Security Noise Reduction</div>
+        </div>
+        <div class="cap-body">I find the signal in your WAF logs, IDS alerts, and vulnerability scans. I build the tuning loops that make your SOC effective instead of overwhelmed. A 30% false positive reduction isn't luck — it's a repeatable method using Splunk, shadow mode testing, and systematic exception rules.</div>
+        <div class="cap-tools">
+          <span class="cap-tool">Splunk</span><span class="cap-tool">WAF Tuning</span><span class="cap-tool">Count Mode</span><span class="cap-tool">JA3/JA4</span><span class="cap-tool">SPL</span>
+        </div>
+      </div>
+
+      <div class="cap-card reveal">
+        <div class="cap-icon-row">
+          <div class="cap-icon">⚙</div>
+          <div class="cap-title">DevSecOps Pipeline Hardening</div>
+        </div>
+        <div class="cap-body">I embed security gates into CI/CD without slowing engineering velocity. Secret scanning, SAST, SCA, image scanning, SBOM, and supply chain signing — all automated, all blocking on real findings, none creating alert fatigue. Security that fits the development workflow actually gets used.</div>
+        <div class="cap-tools">
+          <span class="cap-tool">Veracode SAST/DAST</span><span class="cap-tool">Prisma Cloud</span><span class="cap-tool">Cosign</span><span class="cap-tool">GitHub Actions</span><span class="cap-tool">Jenkins</span>
+        </div>
+      </div>
+
+      <div class="cap-card reveal">
+        <div class="cap-icon-row">
+          <div class="cap-icon">🔬</div>
+          <div class="cap-title">Cloud Vulnerability Management</div>
+        </div>
+        <div class="cap-body">End-to-end VM: asset discovery, agent deployment via SSM + Golden AMI baking, CVSS+EPSS prioritization, automated ITSM ticketing, patch validation with rescan. Built to close loops, not produce compliance reports that sit in a folder. CRITICAL CVEs closed within 24-hour SLA.</div>
+        <div class="cap-tools">
+          <span class="cap-tool">Qualys VMDR</span><span class="cap-tool">AWS Inspector</span><span class="cap-tool">SSM</span><span class="cap-tool">Patch Manager</span><span class="cap-tool">ServiceNow</span>
+        </div>
+      </div>
+
+      <div class="cap-card reveal">
+        <div class="cap-icon-row">
+          <div class="cap-icon">🏗</div>
+          <div class="cap-title">Infrastructure as Security Policy</div>
+        </div>
+        <div class="cap-body">Every firewall rule, IAM policy, KMS key configuration, and security control I write is code. It's reviewed in pull requests, version-controlled in Git, and reproducible across environments. Security becomes auditable by default, not by documentation effort after the fact.</div>
+        <div class="cap-tools">
+          <span class="cap-tool">Terraform</span><span class="cap-tool">AWS CDK</span><span class="cap-tool">CloudFormation</span><span class="cap-tool">IAM/KMS</span><span class="cap-tool">Provider Aliasing</span>
+        </div>
+      </div>
+
+      <div class="cap-card reveal">
+        <div class="cap-icon-row">
+          <div class="cap-icon">🔔</div>
+          <div class="cap-title">Threat Detection → Response</div>
+        </div>
+        <div class="cap-body">Splunk dashboards wired to action. WAF events, bot patterns, failed auth anomalies — I build the correlation rules and the ServiceNow/PagerDuty integrations that turn detection into triage, and triage into resolution. The loop closes, every time, with a ticket that tracks it.</div>
+        <div class="cap-tools">
+          <span class="cap-tool">Splunk</span><span class="cap-tool">CloudWatch</span><span class="cap-tool">GuardDuty</span><span class="cap-tool">ServiceNow</span><span class="cap-tool">Kinesis</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">// Technical Reference</div>
+      <h2 class="section-title">Tools & Technologies</h2>
+    </div>
+    <div class="skill-groups">
+
+      <div class="skill-group reveal">
+        <div class="skill-group-header" onclick="toggleSkillGroup(this)">
+          <span class="skill-group-name"><span class="sg-arrow">▸</span>Cloud Security &amp; Platforms<span class="skill-count">10</span></span>
+          <span class="skill-arrow">▼</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">AWS WAF v2</span><span class="skill-tag">Firewall Manager</span><span class="skill-tag">Shield Advanced</span><span class="skill-tag">Bot Control</span><span class="skill-tag">GuardDuty</span><span class="skill-tag">CloudFront</span><span class="skill-tag">ALB</span><span class="skill-tag">EC2</span><span class="skill-tag">VPC</span><span class="skill-tag">Akamai Kona Site Defender</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-header" onclick="toggleSkillGroup(this)">
+          <span class="skill-group-name"><span class="sg-arrow">▸</span>Infrastructure as Code<span class="skill-count">5</span></span>
+          <span class="skill-arrow">▼</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">Terraform</span><span class="skill-tag primary">AWS CDK</span><span class="skill-tag">CloudFormation</span><span class="skill-tag">IAM/KMS Policies</span><span class="skill-tag">Provider Aliasing</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-header" onclick="toggleSkillGroup(this)">
+          <span class="skill-group-name"><span class="sg-arrow">▸</span>Containerization &amp; Orchestration<span class="skill-count">6</span></span>
+          <span class="skill-arrow">▼</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">Amazon EKS</span><span class="skill-tag">Helm Charts</span><span class="skill-tag">Prisma Cloud</span><span class="skill-tag">Sysdig</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-header" onclick="toggleSkillGroup(this)">
+          <span class="skill-group-name"><span class="sg-arrow">▸</span>CI/CD &amp; DevSecOps<span class="skill-count">7</span></span>
+          <span class="skill-arrow">▼</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">Jenkins</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">GitLab CI/CD</span><span class="skill-tag">Veracode SAST/DAST</span><span class="skill-tag">SonarQube</span><span class="skill-tag">OWASP ZAP</span><span class="skill-tag">Dependency Scanning</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-header" onclick="toggleSkillGroup(this)">
+          <span class="skill-group-name"><span class="sg-arrow">▸</span>Vulnerability &amp; Pen Testing<span class="skill-count">5</span></span>
+          <span class="skill-arrow">▼</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Qualys VM</span><span class="skill-tag">Burp Suite</span><span class="skill-tag">OWASP ZAP</span><span class="skill-tag">JA3/JA4 TLS Fingerprinting</span><span class="skill-tag">Adversarial Testing</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-header" onclick="toggleSkillGroup(this)">
+          <span class="skill-group-name"><span class="sg-arrow">▸</span>SIEM &amp; Incident Response<span class="skill-count">5</span></span>
+          <span class="skill-arrow">▼</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">Splunk</span><span class="skill-tag">CloudWatch</span><span class="skill-tag">Kinesis Firehose</span><span class="skill-tag">ServiceNow</span><span class="skill-tag">Rally</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-header" onclick="toggleSkillGroup(this)">
+          <span class="skill-group-name"><span class="sg-arrow">▸</span>Scripting &amp; AI/ML<span class="skill-count">7</span></span>
+          <span class="skill-arrow">▼</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">Python</span><span class="skill-tag">Bash</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">YAML</span><span class="skill-tag">JSON</span><span class="skill-tag">Groovy</span>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-header" onclick="toggleSkillGroup(this)">
+          <span class="skill-group-name"><span class="sg-arrow">▸</span>Compliance &amp; Frameworks<span class="skill-count">5</span></span>
+          <span class="skill-arrow">▼</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">PCI-DSS</span><span class="skill-tag">HIPAA</span><span class="skill-tag">ISO 27001</span><span class="skill-tag">NIST CSF</span><span class="skill-tag">ITIL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="case-studies">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">// Case Studies</div>
+      <h2 class="section-title">Work That Shipped</h2>
+    </div>
+    <p class="cs-intro reveal">Three deep examples from production environments. Real problems, real constraints, real outcomes — not theoretical best practices.</p>
+    <div class="cs-grid">
+
+      <!-- CS 1 -->
+      <div class="cs-card reveal">
+        <div class="cs-card-top">
+          <div class="cs-num">01</div>
+          <div class="cs-hd">
+            <span class="cs-tag">AWS WAF · Splunk · Terraform · Jolttek Inc · 2024–2025</span>
+            <div class="cs-title">Silencing WAF Noise Without Weakening Defense</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-block">
+            <div class="cs-block-lbl">The Problem</div>
+            <div class="cs-block-txt">Rate-based WAF rules were blocking legitimate users during traffic spikes. Security team was spending 8+ hours per week triaging false positives manually. Engineering complained. Pressure to loosen rules was growing.</div>
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-lbl">What I Built</div>
+            <div class="cs-block-txt">A systematic tuning pipeline: deploy new rules in COUNT mode, baseline FP rate in Splunk using SPL queries segmented by user-agent / cookie / URI path, write precision exceptions for legitimate patterns, flip to BLOCK only after FP rate confirmed below 1%. Repeat monthly with Splunk-driven review.</div>
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-lbl">How I Built It</div>
+            <div class="cs-block-txt">Terraform for all rule deployment (no console changes). Splunk dashboards for WAF event analysis — custom SPL for FP/TP rate trending. ServiceNow integration auto-routing confirmed incidents. JA3/JA4 fingerprinting layered on for bot traffic that evaded IP-based rules.</div>
+          </div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-mark">✓</div>
+          <div class="cs-result-text">False positives down 30% → SOC triage workload cut 30% → engineers stopped filing WAF exceptions → security team regained credibility with product. WAF fully Terraform, peer-reviewed, zero console changes.</div>
+        </div>
+      </div>
+
+      <!-- CS 2 -->
+      <div class="cs-card reveal">
+        <div class="cs-card-top">
+          <div class="cs-num">02</div>
+          <div class="cs-hd">
+            <span class="cs-tag">Firewall Manager · Terraform · Multi-Account · Jolttek Inc · 2024–2025</span>
+            <div class="cs-title">One Policy Change. 350+ Accounts Secured.</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-block">
+            <div class="cs-block-lbl">The Problem</div>
+            <div class="cs-block-txt">Inconsistent WAF configurations across a sprawling multi-account AWS organization. Different teams maintained different rules with different coverage gaps. No central visibility, no enforcement mechanism, constant audit findings.</div>
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-lbl">What I Built</div>
+            <div class="cs-block-txt">AWS Firewall Manager policy backed entirely by Terraform modules. One policy definition, enforced automatically across every CloudFront distribution, ALB, and Route 53 resolver in every account. New accounts inherit WAF + Shield + Bot Control coverage on creation — no manual step required.</div>
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-lbl">How I Built It</div>
+            <div class="cs-block-txt">Terraform provider aliasing for multi-account workspace deployment. Firewall Manager security policies with auto-remediation enabled. IP sets, regex pattern sets, and rate-based rules stored as parameterized Terraform modules. Per-account configuration via variable overrides — same codebase, different risk profiles.</div>
+          </div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-mark">✓</div>
+          <div class="cs-result-text">350+ accounts under one WAF policy → manual config effort cut 50% → config drift eliminated → PCI-DSS and HIPAA audit findings resolved → security now enforced structurally, not by documentation.</div>
+        </div>
+      </div>
+
+      <!-- CS 3 -->
+      <div class="cs-card reveal">
+        <div class="cs-card-top">
+          <div class="cs-num">03</div>
+          <div class="cs-hd">
+            <span class="cs-tag">Qualys VMDR · AWS SSM · Golden AMI · Infoswift Software · 2023–2024</span>
+            <div class="cs-title">Making Vulnerability Management Actually Close Loops</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-block">
+            <div class="cs-block-lbl">The Problem</div>
+            <div class="cs-block-txt">Qualys was deployed but coverage was ~60% — new instances launched without agents, scans weren't prioritized by real risk, and findings sat unassigned. Patch Tuesday came and went with the same vulnerabilities showing up on the next scan.</div>
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-lbl">What I Built</div>
+            <div class="cs-block-txt">A closed-loop VM pipeline: Qualys Cloud Agent baked into the Golden AMI (every new EC2 pre-registered on launch), scan triggered by EventBridge on Patch Tuesday, findings scored by CVSS + EPSS via Python, CRITICAL findings trigger Golden AMI rebuild, HIGH+ findings auto-create ServiceNow tickets with SLA assigned by severity.</div>
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-lbl">How I Built It</div>
+            <div class="cs-block-txt">EC2 Image Builder + Packer for Golden AMI pipeline. Terraform for EventBridge rules and SSM Run Command targeting. Python script for Qualys API → CVSS/EPSS correlation and TEC prioritization scoring. ServiceNow REST API for ticket creation with owner auto-assignment from AWS resource tags.</div>
+          </div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-mark">✓</div>
+          <div class="cs-result-text">Agent coverage 60% → 98% → CRITICAL CVE SLA dropped to 24h → zero manual scheduling → remediation verified by automated rescan. VM went from compliance checkbox to closed-loop security operation.</div>
+        </div>
+      </div>
+
+      <!-- CS 4 -->
+      <div class="cs-card reveal">
+        <div class="cs-card-top">
+          <div class="cs-num">04</div>
+          <div class="cs-hd">
+            <span class="cs-tag">ACTIVE THREAT RESPONSE · AWS WAF · Bot Control · Splunk · Jolttek Inc · 2024</span>
+            <div class="cs-title">Stopping a Distributed Credential Stuffing Attack in Real Time</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <div class="cs-block">
+            <div class="cs-block-lbl">The Situation</div>
+            <div class="cs-block-txt">Authentication traffic spiked across multiple CloudFront distributions during peak hours. Login endpoints showing distributed request bursts across /24 CIDR blocks — classic credential stuffing signature. Existing WAF rate rules were logging but not blocking: thresholds were scoped too broadly and the risk of blocking real users was paralyzing the response. Attack was live and progressing.</div>
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-lbl">What I Did</div>
+            <div class="cs-block-txt">Pulled login endpoint traffic from Splunk — isolated anomaly clusters by user-agent, request frequency, and geographic spread. Confirmed credential stuffing: low-and-slow, rotating IPs, abnormal auth attempt density. Deployed WAF rate-based rules scoped to login URIs via scope-down statements, added Bot Control Targeted for automation fingerprinting, and layered temporary IP reputation blocking. Rules ran in COUNT mode for a 30-minute validation window; flipped to BLOCK once FP rate confirmed below 0.5%.</div>
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-lbl">How It Ran</div>
+            <div class="cs-block-txt">The full response — from detection to active blocking — ran inside one hour. Terraform applied the rules; auto-rollback was configured if FP rate crossed threshold. ServiceNow incident was opened automatically as the attack was detected. After containment: the mitigation pattern was codified into a reusable Terraform WAF module and pushed via Firewall Manager to all 350+ accounts. A post-incident runbook was added to SOC documentation.</div>
+          </div>
+        </div>
+        <div class="cs-result">
+          <div class="cs-result-mark">✓</div>
+          <div class="cs-result-text">Attack traffic reduced 90%+ within minutes of rule activation · zero legitimate user sessions blocked · detection + mitigation pattern deployed organization-wide · SOC runbook created for future recurrence · full audit trail in ServiceNow</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="container">
+    <div class="certs-label reveal">// Certifications &amp; Credentials</div>
+    <div class="certs-strip reveal">
+      <div class="cert-badge">
+        <div class="cert-icon">☁️</div>
+        <div class="cert-info">
+          <span class="cert-name">AWS Security Specialty</span>
+          <span class="cert-issuer">Amazon Web Services</span>
+        </div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon">🏗️</div>
+        <div class="cert-info">
+          <span class="cert-name">AWS Solutions Architect</span>
+          <span class="cert-issuer">Amazon Web Services</span>
+        </div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon">🔐</div>
+        <div class="cert-info">
+          <span class="cert-name">CompTIA Security+</span>
+          <span class="cert-issuer">CompTIA</span>
+        </div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon">🛡️</div>
+        <div class="cert-info">
+          <span class="cert-name">CCSP</span>
+          <span class="cert-issuer">ISC²</span>
+        </div>
+      </div>
+    </div>
+    <!-- UPDATE: Replace cert-badge entries above with your actual certifications -->
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">// Experience</div>
+      <h2 class="section-title">Where I've Shipped</h2>
+    </div>
+    <div class="timeline">
+
+      <!-- JOB 1 -->
+      <div class="timeline-item open current reveal" id="job1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleTimeline('job1')">
+          <div class="timeline-card-header">
+            <div class="timeline-meta">
+              <span class="timeline-date">Nov 2025 – Present</span>
+              <div class="timeline-role">DevSecOps Engineer</div>
+              <div class="timeline-company">Jolttek Inc · DE</div>
+            </div>
+            <div class="timeline-expand">▼</div>
+          </div>
+          <div class="timeline-body">
+            <ul class="timeline-bullets">
+              <li>Owned the full CI/CD migration from AWS CodeCommit to GitHub Enterprise — preserved complete commit history, branch structure, and release tags across frontend and backend repos with zero data loss</li>
+              <li>Designed security-gated CI/CD pipelines for React + Python — Veracode SAST and DAST embedded as blocking gates, meaning vulnerabilities fail the build, not the post-deploy audit</li>
+              <li>Enforced IaC security at the pipeline level: Prisma Cloud scans every Terraform and CloudFormation template before deployment — misconfigurations cannot reach production</li>
+              <li>Architected Honda's HIDP Notification Engine on AWS serverless (Lambda + DynamoDB + SQS + EventBridge) with dead-letter queue handling and structured Splunk telemetry — observable by design</li>
+              <li>Built infrastructure-as-code modules in AWS CDK covering Lambda, DynamoDB, SQS, EventBridge, IAM least-privilege roles, and CloudWatch alarms — full environment reproducible from code</li>
+            </ul>
+            <div class="tech-pills">
+              <span class="tech-pill">AWS CDK</span><span class="tech-pill">Lambda</span><span class="tech-pill">DynamoDB</span><span class="tech-pill">SQS</span><span class="tech-pill">EventBridge</span><span class="tech-pill">GitHub Actions</span><span class="tech-pill">Veracode</span><span class="tech-pill">Prisma Cloud</span><span class="tech-pill">Splunk</span><span class="tech-pill">Python</span><span class="tech-pill">React</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOB 2 -->
+      <div class="timeline-item reveal" id="job2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleTimeline('job2')">
+          <div class="timeline-card-header">
+            <div class="timeline-meta">
+              <span class="timeline-date">May 2024 – Oct 2025</span>
+              <div class="timeline-role">Cybersecurity Engineer</div>
+              <div class="timeline-company">Jolttek Inc · DE</div>
+            </div>
+            <div class="timeline-expand">▼</div>
+          </div>
+          <div class="timeline-body">
+            <ul class="timeline-bullets">
+              <li>Designed and owned the AWS Firewall Manager architecture for a 350+ account organization — one WAF v2 + Shield Advanced policy enforced automatically across CloudFront, ALB, and Route 53 in every account; new accounts inherit protection on creation with zero manual config</li>
+              <li>Built a systematic WAF tuning process — COUNT mode baseline → Splunk FP/TP analysis → precision exception rules → BLOCK mode — reducing false positives 30% while maintaining full OWASP Top 10 coverage (SQLi, XSS, SSRF, CSRF, XXE)</li>
+              <li>Introduced JA3/JA4 TLS fingerprinting and AWS Bot Control (Common + Targeted) to detect credential stuffing, scraping, and adversarial bots that evade IP-based blocking — catching threats that traditional WAF signatures miss</li>
+              <li>Wrote Terraform modules for WebACLs, IP sets, regex patterns, rate rules, and Shield protections — every security control is peer-reviewed, versioned, and reproducible; manual config work cut 50%</li>
+              <li>Built Splunk dashboards and ServiceNow integration that turned WAF/Shield/Bot Control events into auto-routed incidents — SOC triage workload reduced 30%, mean time to acknowledge cut from hours to minutes</li>
+            </ul>
+            <div class="tech-pills">
+              <span class="tech-pill">AWS WAF v2</span><span class="tech-pill">Firewall Manager</span><span class="tech-pill">Shield Advanced</span><span class="tech-pill">Bot Control</span><span class="tech-pill">Terraform</span><span class="tech-pill">Splunk</span><span class="tech-pill">ServiceNow</span><span class="tech-pill">JA3/JA4</span><span class="tech-pill">PCI-DSS</span><span class="tech-pill">HIPAA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOB 3 -->
+      <div class="timeline-item reveal" id="job3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleTimeline('job3')">
+          <div class="timeline-card-header">
+            <div class="timeline-meta">
+              <span class="timeline-date">Sep 2023 – May 2024</span>
+              <div class="timeline-role">Cloud DevSecOps / Cybersecurity Engineer</div>
+              <div class="timeline-company">Infoswift Software LLC · NC</div>
+            </div>
+            <div class="timeline-expand">▼</div>
+          </div>
+          <div class="timeline-body">
+            <ul class="timeline-bullets">
+              <li>Built the Qualys VM closed loop: agent baked into Golden AMI (98% coverage vs. previous ~60%), EventBridge-triggered scans on Patch Tuesday, Python-based CVSS+EPSS risk scoring, ServiceNow auto-ticket with 24h SLA for CRITICALs, automated rescan gate for verification</li>
+              <li>Owned runtime security for EKS workloads — Prisma Cloud Compute + Sysdig enforcing policy at the container level, catching threats that perimeter controls miss; Kubernetes RBAC and NetworkPolicy hardened to least-privilege baseline</li>
+              <li>Embedded SAST, DAST, and dependency scanning into Jenkins and GitHub CI/CD pipelines as blocking gates — vulnerabilities fail the build before they can reach staging, not after they reach production</li>
+              <li>Performed web application and infrastructure penetration testing with Burp Suite and OWASP ZAP — findings fed directly into Terraform remediations, not just a PDF report</li>
+              <li>Designed least-privilege IAM architecture with KMS encryption across all cloud workloads — every role, every policy, every key configuration committed to code and peer-reviewed</li>
+            </ul>
+            <div class="tech-pills">
+              <span class="tech-pill">Kubernetes</span><span class="tech-pill">EKS</span><span class="tech-pill">Docker</span><span class="tech-pill">Terraform</span><span class="tech-pill">Prisma Cloud</span><span class="tech-pill">Sysdig</span><span class="tech-pill">Qualys</span><span class="tech-pill">Burp Suite</span><span class="tech-pill">OWASP ZAP</span><span class="tech-pill">Jenkins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOB 4 -->
+      <div class="timeline-item reveal" id="job4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleTimeline('job4')">
+          <div class="timeline-card-header">
+            <div class="timeline-meta">
+              <span class="timeline-date">Sep 2021 – Dec 2021</span>
+              <div class="timeline-role">Cybersecurity Engineer</div>
+              <div class="timeline-company">Alice Consulting LLC · TX</div>
+            </div>
+            <div class="timeline-expand">▼</div>
+          </div>
+          <div class="timeline-body">
+            <ul class="timeline-bullets">
+              <li>Centralized healthcare application, endpoint, and server logs into Splunk for SOC visibility</li>
+              <li>Created correlation searches and dashboards for suspicious behavior, failed logins, and privilege escalations</li>
+              <li>Reduced false positives and improved SOC triage efficiency by 20% through alert tuning</li>
+              <li>Applied HIPAA-aligned monitoring ensuring PHI access was properly logged and reviewed</li>
+              <li>Conducted post-incident reviews recommending rule updates and detection improvements</li>
+            </ul>
+            <div class="tech-pills">
+              <span class="tech-pill">Splunk Enterprise</span><span class="tech-pill">ServiceNow</span><span class="tech-pill">HIPAA</span><span class="tech-pill">SOC Playbooks</span><span class="tech-pill">RCA Documentation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOB 5 -->
+      <div class="timeline-item reveal" id="job5">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" onclick="toggleTimeline('job5')">
+          <div class="timeline-card-header">
+            <div class="timeline-meta">
+              <span class="timeline-date">Jan 2017 – Mar 2019</span>
+              <div class="timeline-role">Network Support Engineer</div>
+              <div class="timeline-company">ProveIT Catalysts · India</div>
+            </div>
+            <div class="timeline-expand">▼</div>
+          </div>
+          <div class="timeline-body">
+            <ul class="timeline-bullets">
+              <li>Installed and configured LAN infrastructure including switches, routers, and Wi-Fi access points for healthcare offices</li>
+              <li>Managed DHCP/static IP configurations ensuring reliable connectivity for clinical and administrative systems</li>
+              <li>Reduced troubleshooting time by documenting repeatable playbooks for common network and endpoint issues</li>
+              <li>Assisted with HIPAA-aligned IT security practices and periodic system compliance checks</li>
+            </ul>
+            <div class="tech-pills">
+              <span class="tech-pill">LAN/WAN</span><span class="tech-pill">DHCP</span><span class="tech-pill">DNS</span><span class="tech-pill">Windows Server</span><span class="tech-pill">Linux</span><span class="tech-pill">Shell Scripting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE -->
+<section id="pipeline">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">// DevSecOps</div>
+      <h2 class="section-title">Security Engineering Pipelines</h2>
+    </div>
+    <p class="pl-intro reveal">Four production-grade security pipelines — Golden AMI factory, application CI/CD with every gate enforced, multi-account WAF deployment, and Qualys-driven vulnerability management. Each reflects real tooling from enterprise AWS environments.</p>
+    <div class="pl-tab-bar reveal" id="pl-tab-bar"></div>
+    <div class="pl-panels" id="pl-panels"></div>
+  </div>
+</section>
+
+<!-- HOW I THINK -->
+<section id="how-i-think">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">// Decision-Making</div>
+      <h2 class="section-title">How I Approach Problems</h2>
+    </div>
+    <p class="think-intro reveal">Senior security engineering is mostly a series of trade-offs. Here's how I navigate the ones that come up constantly.</p>
+    <div class="think-grid">
+
+      <div class="think-card reveal">
+        <div class="think-vs">RISK ↔ USABILITY</div>
+        <div class="think-title">I default to neither blocking everything nor allowing everything</div>
+        <div class="think-body">Locking everything down is easy. Blocking nothing is also easy. The hard work is building rules that catch actual attacks without impacting legitimate users. My approach: start every new rule in COUNT mode, measure real traffic patterns against a Splunk baseline, tune to below 1% false positive rate before switching to BLOCK. Security that breaks the product gets turned off. I'd rather have calibrated protection in place than perfect protection that nobody uses.</div>
+      </div>
+
+      <div class="think-card reveal">
+        <div class="think-vs">AUTOMATION ↔ HUMAN JUDGMENT</div>
+        <div class="think-title">I automate the repeatable and protect the judgment calls</div>
+        <div class="think-body">I automate: patch schedules, rule deployment, scan triggers, ticket creation, agent provisioning, compliance reporting. I keep humans in the loop for: exception approvals, FP suppression decisions, time-boxed waivers, and post-incident rule changes. Automation removes toil and enforces consistency. It doesn't replace accountability. Every automated action I build has an audit trail and a human who owns the policy behind it.</div>
+      </div>
+
+      <div class="think-card reveal">
+        <div class="think-vs">PREVENTION ↔ DETECTION</div>
+        <div class="think-title">I design in layers because no single control is sufficient</div>
+        <div class="think-body">WAF stops known attack signatures. JA3/JA4 fingerprinting catches sophisticated bots that WAF misses. GuardDuty sees lateral movement that happened after perimeter. Qualys finds what's exploitable before attackers do. Splunk correlates what all of them missed individually. I design security in depth not because it's best practice — but because I've seen what slips through any single layer. The goal is resilience, not the illusion of invulnerability.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">// Current Focus</div>
+      <h2 class="section-title">Research & What's Next</h2>
+    </div>
+
+    <div class="research-card reveal">
+      <div class="research-badge">📍 Westcliff University · DBA Cybersecurity (In Progress)</div>
+      <h3 class="research-title">AI-Enabled Web Application Firewalls</h3>
+      <p class="research-summary">Investigating the integration of machine learning techniques into WAF systems to improve detection of sophisticated web threats. Built test datasets, trained supervised/unsupervised models, and deployed a simulated WAF testbed.</p>
+      <div class="research-findings">
+        <div class="finding-item">
+          <p><strong>30–40% Improvement</strong>False positive reduction demonstrated through prototype testing with real attack datasets</p>
+        </div>
+        <div class="finding-item">
+          <p><strong>ML Prototypes</strong>Built in Python using scikit-learn and TensorFlow — supervised and unsupervised approaches</p>
+        </div>
+        <div class="finding-item">
+          <p><strong>Threat Detection</strong>Behavioral profiling + anomaly detection for SQLi, XSS, and automated bot traffic</p>
+        </div>
+      </div>
+      <div class="research-tech">
+        <span class="skill-tag primary">Python</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Anomaly Detection</span><span class="skill-tag">Reinforcement Learning</span><span class="skill-tag">WAF</span><span class="skill-tag">Data Labeling</span>
+      </div>
+    </div>
+
+    <div class="edu-cards reveal">
+      <div class="edu-card">
+        <div class="edu-degree">MS Computer Science</div>
+        <div class="edu-school">University of Central Missouri</div>
+        <div class="edu-dates">Aug 2019 – Aug 2021</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">BTech Computer Science</div>
+        <div class="edu-school">Sharda University</div>
+        <div class="edu-dates">Aug 2014 – May 2018</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">// Hire Me</div>
+      <h2 class="section-title">Let's build secure systems that actually scale</h2>
+    </div>
+    <div class="cta-avail reveal">Available now · Remote / Hybrid · Open to $60–$75/hr (W2/C2C) · EST · Responding within 24h</div>
+    <div class="cta-roles reveal">
+      <div class="cta-roles-title">Roles I'm targeting</div>
+      <div class="cta-roles-list">
+        <span class="cta-role-tag">Cloud Security Architect</span>
+        <span class="cta-role-tag">Senior DevSecOps Engineer</span>
+        <span class="cta-role-tag">AWS Platform Security Engineer</span>
+        <span class="cta-role-tag">WAF / Application Security</span>
+        <span class="cta-role-tag">Security Tooling / Product Security</span>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-links reveal">
+
+        <a href="mailto:saisudheerkondapally@gmail.com" class="contact-row">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div class="contact-row-info">
+            <span class="contact-row-label">Email</span>
+            <span class="contact-row-value">saisudheerkondapally@gmail.com</span>
+          </div>
+          <span class="contact-row-arrow">→</span>
+        </a>
+
+      </div>
+
+      <div class="contact-terminal reveal">
+        <div class="terminal-header">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-path">sai@portfolio:~/contact$</span>
+        </div>
+        <form class="contact-form" action="mailto:saisudheerkondapally@gmail.com" method="GET" enctype="text/plain">
+          <div class="form-group">
+            <label class="form-label" for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-input" placeholder="Opportunity at..." required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea id="message" name="body" class="form-textarea" placeholder="Hi Sai, I'd like to discuss..." required></textarea>
+          </div>
+          <button type="submit" class="btn-send">▶ Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Built with precision · Sai Sudheer Kondapally · <span id="footer-year"></span></p>
+  </div>
+</footer>
+
+<script>
+// ===== PARTICLES =====
+(function(){
+  var canvas=document.getElementById('particles');
+  var ctx=canvas.getContext('2d');
+  var W,H,particles=[];
+  var isMobile=window.innerWidth<768;
+  var COUNT=isMobile?40:120;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;isMobile=W<768;}
+  resize();window.addEventListener('resize',function(){resize();});
+  function Particle(){
+    this.x=Math.random()*W;this.y=Math.random()*H;
+    this.vx=(Math.random()-0.5)*0.5;this.vy=(Math.random()-0.5)*0.5;
+    this.r=1.5;
+  }
+  Particle.prototype.update=function(){
+    this.x+=this.vx;this.y+=this.vy;
+    if(this.x<0||this.x>W)this.vx*=-1;
+    if(this.y<0||this.y>H)this.vy*=-1;
+  };
+  for(var i=0;i<COUNT;i++)particles.push(new Particle());
+  var CONNECT=isMobile?80:120;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(function(p){p.update();ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(0,229,255,0.6)';ctx.fill();});
+    if(!isMobile){
+      for(var i=0;i<particles.length;i++){
+        for(var j=i+1;j<particles.length;j++){
+          var dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);
+          if(d<CONNECT){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle='rgba(0,229,255,'+(1-d/CONNECT)*0.15+')';ctx.lineWidth=1;ctx.stroke();}
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ===== HERO GLOW PARALLAX =====
+(function(){
+  var glow=document.querySelector('.hero-glow');
+  var hero=document.getElementById('hero');
+  if(!glow||!hero)return;
+  hero.addEventListener('mousemove',function(e){
+    var r=hero.getBoundingClientRect();
+    var x=((e.clientX-r.left)/r.width*100).toFixed(1);
+    var y=((e.clientY-r.top)/r.height*100).toFixed(1);
+    glow.style.background='radial-gradient(ellipse 60% 50% at '+x+'% '+y+'%,rgba(0,229,255,0.07) 0%,transparent 70%)';
+  });
+  hero.addEventListener('mouseleave',function(){
+    glow.style.background='radial-gradient(ellipse 60% 50% at 50% 40%,rgba(0,229,255,0.05) 0%,transparent 70%)';
+  });
+})();
+
+// ===== NAV SCROLL =====
+(function(){
+  var nav=document.getElementById('nav');
+  var links=document.querySelectorAll('.nav-links a');
+  var sections=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>50)nav.classList.add('scrolled');else nav.classList.remove('scrolled');
+    var scrollPos=window.scrollY+120;
+    sections.forEach(function(s){
+      if(s.offsetTop<=scrollPos&&s.offsetTop+s.offsetHeight>scrollPos){
+        var matched=null;
+        links.forEach(function(l){if(l.getAttribute('href')==='#'+s.id)matched=l;});
+        if(matched){links.forEach(function(l){l.classList.remove('active');});matched.classList.add('active');}
+      }
+    });
+  });
+  links.forEach(function(l){
+    l.addEventListener('click',function(e){e.preventDefault();var target=document.querySelector(l.getAttribute('href'));if(target)target.scrollIntoView({behavior:'smooth'});});
+  });
+})();
+
+// ===== HAMBURGER =====
+(function(){
+  var btn=document.getElementById('hamburger');
+  var nav=document.getElementById('mobileNav');
+  btn.addEventListener('click',function(){btn.classList.toggle('open');nav.classList.toggle('open');});
+  document.querySelectorAll('.mobile-link').forEach(function(l){
+    l.addEventListener('click',function(e){
+      e.preventDefault();
+      btn.classList.remove('open');nav.classList.remove('open');
+      var target=document.querySelector(l.getAttribute('href'));if(target)target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+})();
+
+// ===== TYPEWRITER =====
+(function(){
+  var el=document.getElementById('typewriter');
+  var cursor=document.getElementById('hero-cursor');
+  var phrases=['AWS WAF Architect','DevSecOps Engineer','Terraform Security Automator','AI / WAF Researcher'];
+  var pi=0,ci=0,deleting=false;
+  function tick(){
+    var phrase=phrases[pi];
+    if(!deleting){
+      el.textContent=phrase.substring(0,ci+1);ci++;
+      if(ci===phrase.length){deleting=true;setTimeout(tick,1800);return;}
+    }else{
+      el.textContent=phrase.substring(0,ci-1);ci--;
+      if(ci===0){deleting=false;pi=(pi+1)%phrases.length;setTimeout(tick,300);return;}
+    }
+    setTimeout(tick,deleting?35:65);
+  }
+  tick();
+})();
+
+// ===== SCROLL REVEAL =====
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        var el=e.target;
+        var delay=(el.dataset.delay||0);
+        setTimeout(function(){el.classList.add('visible');},delay);
+        obs.unobserve(el);
+      }
+    });
+  },{threshold:0.1});
+  els.forEach(function(el,i){obs.observe(el);});
+})();
+
+// ===== COUNTER =====
+(function(){
+  var counters=document.querySelectorAll('[data-count]');
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el=e.target;
+        var target=parseInt(el.dataset.count);
+        var suffix=el.dataset.suffix||'';
+        var start=0,dur=1500,startTime=null;
+        function easeOutQuart(t){return 1-(--t)*t*t*t;}
+        function step(ts){
+          if(!startTime)startTime=ts;
+          var progress=Math.min((ts-startTime)/dur,1);
+          var val=Math.round(easeOutQuart(progress)*target);
+          el.textContent=val+suffix;
+          if(progress<1)requestAnimationFrame(step);else el.textContent=target+suffix;
+        }
+        requestAnimationFrame(step);
+        obs.unobserve(el);
+      }
+    });
+  },{threshold:0.5});
+  counters.forEach(function(el){obs.observe(el);});
+})();
+
+// ===== TERMINAL TYPEOUT =====
+(function(){
+  var body=document.getElementById('terminal-body');
+  var win=document.getElementById('terminal-window');
+  var lines=[
+    {type:'prompt',text:'whoami'},
+    {type:'output',text:'Sai Sudheer Kondapally — <span class="t-cyan">Cybersecurity Engineer</span>'},
+    {type:'prompt',text:'cat summary.txt'},
+    {type:'output',text:'<span class="t-cyan">7+ years</span> in cloud security, AWS WAF engineering, and DevSecOps automation'},
+    {type:'output',text:'Secured <span class="t-cyan">350+ AWS accounts</span> via Terraform-driven Firewall Manager deployments'},
+    {type:'output',text:'Reduced false positives <span class="t-cyan">30%</span> · Cut manual config effort <span class="t-cyan">50%</span> · <span class="t-green">Zero breaches</span>'},
+    {type:'prompt',text:'echo $RESEARCH'},
+    {type:'output',text:'<span class="t-purple">DBA Cybersecurity @ Westcliff University</span> (in progress)'},
+    {type:'output',text:'<span class="t-purple">Dissertation:</span> AI-Enabled Web Application Firewalls'},
+    {type:'output',text:'Built prototypes showing <span class="t-cyan">30-40% improvement</span> in false positive reduction'},
+    {type:'prompt',text:'ls skills/ | head'},
+    {type:'output',text:'<span class="t-cyan">AWS-WAF-v2</span>  <span class="t-cyan">Terraform</span>  <span class="t-cyan">Splunk</span>  <span class="t-cyan">Python</span>  Kubernetes  Prisma-Cloud  JA3/JA4'},
+    {type:'prompt',text:'ping saisudheerkondapally@gmail.com ',cursor:true}
+  ];
+  var fired=false;
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting&&!fired){fired=true;typeLines(0);obs.unobserve(win);}
+    });
+  },{threshold:0.2});
+  obs.observe(win);
+
+  function typeLines(idx){
+    if(idx>=lines.length)return;
+    var line=lines[idx];
+    var span=document.createElement('span');
+    span.className='t-line '+(line.type==='prompt'?'t-prompt':'t-output');
+    body.appendChild(span);
+    var delay=line.type==='prompt'?250:80;
+    setTimeout(function(){
+      if(line.type==='prompt'){
+        typeChars(span,line.text,0,18,function(){
+          if(line.cursor){var c=document.createElement('span');c.className='t-cursor';span.appendChild(c);}
+          else setTimeout(function(){typeLines(idx+1);},120);
+        });
+      }else{
+        span.innerHTML=line.text;
+        setTimeout(function(){typeLines(idx+1);},60);
+      }
+    },delay);
+  }
+
+  function typeChars(el,text,ci,speed,cb){
+    if(ci<=text.length){
+      el.innerHTML='<span style="color:var(--green)">$ </span>'+text.substring(0,ci);
+      setTimeout(function(){typeChars(el,text,ci+1,speed,cb);},speed);
+    }else if(cb)cb();
+  }
+})();
+
+// ===== SKILL GROUPS TOGGLE =====
+function toggleSkillGroup(header){
+  var group=header.parentElement;
+  group.classList.toggle('collapsed');
+}
+
+// ===== TIMELINE TOGGLE =====
+function toggleTimeline(id){
+  var item=document.getElementById(id);
+  item.classList.toggle('open');
+}
+
+// ===== PIPELINE ANIMATION V2 =====
+(function(){
+var PL=[
+/* 0 ─ Golden AMI Factory */
+{id:'p0',
+ tab:{name:'Golden AMI Factory',sub:'Hardened base images · 350+ accounts',num:'10 stages · Jolttek Inc'},
+ rail:{branch:'infra/golden-ami',commit:'trigger: Patch Tuesday · build cycle #47 · Amazon Linux 2023',ctx:'Jolttek Inc'},
+ steps:[
+  {id:'p0s0',c:'p0c0',icon:'⏱',lbl:'Schedule',bdg:'trg',bdgT:'TRIGGER',sg:0,tA:300,tP:500,
+   tip:{t:'Patch Tuesday Trigger',l:['EventBridge Scheduler rule','AWS SSM Patch Manager','NIST CVE 7-day SLA timer']},
+   lc:'lr',lm:'▶ Patch Tuesday trigger fired — AMI build cycle #47 starting',plc:null,plm:null},
+  {id:'p0s1',c:'p0c1',icon:'📀',lbl:'Pull Base AMI',bdg:'bld',bdgT:'BUILD',sg:0,tA:400,tP:700,
+   tip:{t:'Source AMI',l:['Amazon Linux 2023 (latest)','CIS hardened image (AWS MP)','RHEL-9 STIG baseline option']},
+   lc:'lr',lm:'📀 Pulling latest Amazon Linux 2023 CIS hardened base AMI...',plc:null,plm:null},
+  {id:'p0s2',c:'p0c2',icon:'🔒',lbl:'OS Hardening',bdg:'sec',bdgT:'SECURITY',sg:1,tA:400,tP:1400,
+   tip:{t:'CIS + STIG Hardening',l:['CIS Benchmark Level 2','DISA STIG controls applied','auditd rules · sysctl tuning','Disable unused services/ports']},
+   lc:'ls',lm:'🔒 Applying CIS Level 2 + DISA STIG — 247 hardening controls...',plc:'lok',plm:'✓ OS hardening: 247 controls applied · 0 failures'},
+  {id:'p0s3',c:'p0c3',icon:'⊕',lbl:'Patch + Update',bdg:'ptch',bdgT:'PATCH',sg:0,tA:400,tP:1000,
+   tip:{t:'Critical Patching',l:['yum/dnf security-only update','Kernel CVE patches applied','AWS-provided patch baseline','Zero CRITICAL CVEs policy']},
+   lc:'lr',lm:'⊕ Applying OS security patches — kernel + critical CVE fixes...',plc:null,plm:null},
+  {id:'p0s4',c:'p0c4',icon:'⚙',lbl:'Bake Agents',bdg:'bld',bdgT:'BUILD',sg:0,tA:400,tP:900,
+   tip:{t:'Agent Pre-install',l:['Qualys Cloud Agent (auto-reg)','CloudWatch Unified Agent','AWS SSM Agent (latest)','Splunk Universal Forwarder']},
+   lc:'lr',lm:'⚙ Baking Qualys Cloud Agent + CloudWatch + Splunk UF into AMI...',plc:null,plm:null},
+  {id:'p0s5',c:'p0c5',icon:'🔬',lbl:'Inspector Scan',bdg:'scn',bdgT:'SCAN',sg:1,tA:400,tP:1300,
+   tip:{t:'AWS Inspector v2',l:['CVE + network reachability','OS + app layer findings','Block pipeline on CRITICAL','ECR image scan integration']},
+   lc:'ls',lm:'🔬 AWS Inspector v2: scanning AMI for CVEs and network exposure...',plc:'lok',plm:'✓ Inspector: 0 CRITICAL · 3 LOW accepted — gate passed'},
+  {id:'p0s6',c:'p0c6',icon:'≡',lbl:'Compliance Audit',bdg:'sec',bdgT:'SECURITY',sg:1,tA:400,tP:1200,
+   tip:{t:'Compliance Validation',l:['OpenSCAP + Lynis scorer','AWS Config rule evaluation','NIST 800-53 control mapping','PCI-DSS · HIPAA ISO 27001']},
+   lc:'ls',lm:'≡ OpenSCAP + Lynis: validating NIST 800-53 / PCI-DSS controls...',plc:'lok',plm:'✓ Compliance: 94.3% passing (above 90% threshold)'},
+  {id:'p0s7',c:'p0c7',icon:'🔑',lbl:'Seal + Encrypt',bdg:'sec',bdgT:'SECURITY',sg:0,tA:400,tP:700,
+   tip:{t:'AMI Sealing',l:['AWS KMS CMK encryption','Tag: golden=true · version stamp','Immutable EBS snapshot lock','Restrict share permissions']},
+   lc:'lr',lm:'🔑 Sealing AMI — KMS encryption + tagging golden-2025.Q2.47...',plc:null,plm:null},
+  {id:'p0s8',c:'p0c8',icon:'⊗',lbl:'Distribute (RAM)',bdg:'dep',bdgT:'DEPLOY',sg:0,tA:400,tP:900,
+   tip:{t:'Multi-Account Share',l:['AWS RAM → 350+ accounts','SSM Parameter Store update','/golden-ami/latest auto-refresh','6-region replication · Terraform']},
+   lc:'lr',lm:'⊗ AWS RAM: distributing golden AMI → 350+ accounts · 6 regions...',plc:null,plm:null},
+  {id:'p0s9',c:null,icon:'↺',lbl:'Fleet Refresh',bdg:'mon',bdgT:'MONITOR',sg:0,tA:400,tP:700,
+   tip:{t:'ASG + Fleet Update',l:['ASG instance refresh rollout','Patch compliance report (Splunk)','Qualys agents auto-register','CloudWatch baseline updated']},
+   lc:'lr',lm:'↺ Rolling ASG refresh — fleet migrating to golden AMI v47...',plc:'lok',plm:'✓ Golden AMI v47 active · 350+ accounts compliant · all agents running'}
+ ]},
+/* 1 ─ Application CI/CD + Security Gates */
+{id:'p1',
+ tab:{name:'App CI/CD + Security',sub:'SLSA Level 3 · all gates enforced',num:'10 stages · Jolttek Inc'},
+ rail:{branch:'main',commit:'feat: add WAF rate-limit tuning module · PR #142 merged · sha256:a3f2c91',ctx:'Jolttek Inc'},
+ steps:[
+  {id:'p1s0',c:'p1c0',icon:'&lt;/&gt;',lbl:'Git Push',bdg:'trg',bdgT:'TRIGGER',sg:0,tA:300,tP:500,
+   tip:{t:'Source Control',l:['GitHub Enterprise repo','Branch protection + CODEOWNERS','Signed commits enforced (GPG)']},
+   lc:'lr',lm:'▶ Push to main · PR #142 merged — CI/CD pipeline triggered',plc:null,plm:null},
+  {id:'p1s1',c:'p1c1',icon:'🔭',lbl:'Secret Scan',bdg:'sec',bdgT:'SECURITY',sg:1,tA:400,tP:900,
+   tip:{t:'Secrets Detection',l:['TruffleHog (full history scan)','git-secrets pre-receive hook','GitGuardian real-time monitor']},
+   lc:'ls',lm:'🔭 TruffleHog: scanning full commit history for secrets...',plc:'lok',plm:'✓ Secret scan: 0 secrets detected — gate passed'},
+  {id:'p1s2',c:'p1c2',icon:'🔍',lbl:'SAST',bdg:'sec',bdgT:'SECURITY',sg:1,tA:400,tP:1400,
+   tip:{t:'Static Analysis',l:['Veracode SAST pipeline scan','SonarQube quality gate','0 CRITICAL/HIGH policy enforced']},
+   lc:'ls',lm:'🔍 Veracode SAST: scanning 2,847 lines of Python + React...',plc:'lok',plm:'✓ SAST: 0 critical · 2 info findings — gate passed'},
+  {id:'p1s3',c:'p1c3',icon:'📦',lbl:'SCA + IaC Scan',bdg:'sec',bdgT:'SECURITY',sg:1,tA:400,tP:1100,
+   tip:{t:'Dependency + IaC',l:['OWASP Dependency-Check','Prisma Cloud IaC (CDK+TF)','tfsec · Checkov policies','License compliance gate']},
+   lc:'ls',lm:'📦 SCA: 187 deps · Prisma IaC scan: Terraform + CDK templates...',plc:'lok',plm:'✓ SCA: 0 HIGH CVEs · IaC: no critical misconfigs — passed'},
+  {id:'p1s4',c:'p1c4',icon:'🐳',lbl:'Build + SBOM',bdg:'bld',bdgT:'BUILD',sg:0,tA:400,tP:800,
+   tip:{t:'Container Build',l:['Docker multi-stage build','GitHub Actions · ECR push','Syft SBOM (CycloneDX format)','Software provenance attestation']},
+   lc:'lr',lm:'🐳 Docker multi-stage build · generating CycloneDX SBOM...',plc:null,plm:null},
+  {id:'p1s5',c:'p1c5',icon:'🛡',lbl:'Image Scan',bdg:'scn',bdgT:'SCAN',sg:1,tA:400,tP:1200,
+   tip:{t:'Container Security',l:['Prisma Cloud Compute scan','ECR Enhanced Scanning (Snyk)','CVE + SBOM attestation check','Detect secrets in image layers']},
+   lc:'ls',lm:'🛡 Prisma Cloud: scanning image layers · SBOM attestation...',plc:'lok',plm:'✓ Image: 0 HIGH/CRITICAL CVEs · no secrets in layers — passed'},
+  {id:'p1s6',c:'p1c6',icon:'✎',lbl:'Sign (Cosign)',bdg:'sec',bdgT:'SECURITY',sg:0,tA:400,tP:600,
+   tip:{t:'Supply Chain Security',l:['Cosign + AWS KMS key signing','OCI image attestation push','SLSA Level 3 provenance','Notation v2 (OCI spec)']},
+   lc:'lr',lm:'✎ Cosign: signing image with KMS — SLSA Level 3 provenance...',plc:null,plm:null},
+  {id:'p1s7',c:'p1c7',icon:'⚡',lbl:'DAST',bdg:'scn',bdgT:'SCAN',sg:1,tA:400,tP:1800,
+   tip:{t:'Dynamic Analysis',l:['OWASP ZAP active scan','Veracode DAST profile run','Staging env authenticated crawl','Full OWASP Top 10 coverage']},
+   lc:'ls',lm:'⚡ OWASP ZAP: active scan of staging env — OWASP Top 10...',plc:'lok',plm:'✓ DAST: no exploitable vulnerabilities found — gate passed'},
+  {id:'p1s8',c:'p1c8',icon:'☸',lbl:'Deploy → EKS',bdg:'dep',bdgT:'DEPLOY',sg:0,tA:400,tP:1000,
+   tip:{t:'Kubernetes Deploy',l:['Amazon EKS · Helm 3 upgrade','RBAC + NetworkPolicy enforced','PodSecurity admission control','Terraform cluster IaC']},
+   lc:'lr',lm:'☸ Helm upgrade → EKS: rolling 3 pods across 2 AZs...',plc:null,plm:null},
+  {id:'p1s9',c:null,icon:'👁',lbl:'Runtime',bdg:'mon',bdgT:'MONITOR',sg:0,tA:400,tP:600,
+   tip:{t:'Runtime Security',l:['Sysdig Secure + Falco rules','Prisma Cloud Compute defend','Splunk + CloudWatch telemetry','Behavioral anomaly detection']},
+   lc:'lr',lm:'👁 Sysdig + Splunk runtime monitoring active — all alerts wired...',plc:'lok',plm:'✓ 9 security gates passed · image signed · deployed to production'}
+ ]},
+/* 2 ─ WAF Rule Deployment */
+{id:'p2',
+ tab:{name:'WAF Rule Deployment',sub:'30% FP reduction · 350+ accounts',num:'10 stages · Jolttek Inc'},
+ rail:{branch:'waf/rate-limit-tuning',commit:'fix: reduce SQLi false positives 30% · Firewall Manager v2 rollout',ctx:'Jolttek Inc'},
+ steps:[
+  {id:'p2s0',c:'p2c0',icon:'📝',lbl:'WAF PR',bdg:'trg',bdgT:'TRIGGER',sg:0,tA:300,tP:500,
+   tip:{t:'Terraform WAF PR',l:['WAF rule change in Terraform','Peer review + CODEOWNERS gate','Risk classification label']},
+   lc:'lr',lm:'▶ WAF Terraform PR #89 merged — rule lifecycle pipeline triggered',plc:null,plm:null},
+  {id:'p2s1',c:'p2c1',icon:'⚙',lbl:'TF Validate',bdg:'bld',bdgT:'BUILD',sg:0,tA:400,tP:700,
+   tip:{t:'Terraform Validate',l:['terraform validate + plan','tflint · tfsec · Checkov','Prisma Cloud IaC scan','Cost estimation review']},
+   lc:'lr',lm:'⚙ Terraform validate + tfsec/Checkov WAF config scan...',plc:null,plm:null},
+  {id:'p2s2',c:'p2c2',icon:'⚗',lbl:'WAF Unit Test',bdg:'sec',bdgT:'SECURITY',sg:1,tA:400,tP:1300,
+   tip:{t:'Rule Test Suite',l:['Python WAF Tester script','100+ attack payload vectors','SQLi/XSS/SSRF/CSRF/XXE tests','FP baseline measurement run']},
+   lc:'ls',lm:'⚗ WAF Tester: running 100+ attack payloads against new rules...',plc:'lok',plm:'✓ Unit test: 98/100 payloads blocked · 0 false positives on baseline'},
+  {id:'p2s3',c:'p2c3',icon:'◑',lbl:'Shadow Mode',bdg:'scn',bdgT:'COUNT MODE',sg:1,tA:400,tP:1200,
+   tip:{t:'Non-blocking Shadow',l:['WAF deployed in COUNT mode','Live traffic mirrored (no block)','FP rate measured · 72h window','Auto-fail if FP rate > 1%']},
+   lc:'ls',lm:'◑ COUNT mode: shadowing live traffic — measuring false positive rate...',plc:'lok',plm:'✓ Shadow: FP rate 0.8% (below 1% threshold) — approved to block'},
+  {id:'p2s4',c:'p2c4',icon:'📊',lbl:'Splunk Baseline',bdg:'mon',bdgT:'MONITOR',sg:0,tA:400,tP:900,
+   tip:{t:'Baseline Analysis',l:['Splunk WAF event dashboard','FP/TP rate trend analysis','Attack pattern correlation','Alert threshold validation']},
+   lc:'lr',lm:'📊 Splunk: analyzing WAF events — establishing FP/TP baseline...',plc:null,plm:null},
+  {id:'p2s5',c:'p2c5',icon:'→',lbl:'Stage Deploy',bdg:'dep',bdgT:'DEPLOY',sg:0,tA:400,tP:800,
+   tip:{t:'Single Account Staging',l:['1 AWS account test deploy','24h A/B traffic soak test','CloudFront + ALB scope','Auto-rollback if FP spikes']},
+   lc:'lr',lm:'→ Stage deploy: single account · 24h A/B soak test...',plc:null,plm:null},
+  {id:'p2s6',c:'p2c6',icon:'⊕',lbl:'FP Tuning',bdg:'sec',bdgT:'SECURITY',sg:1,tA:400,tP:1200,
+   tip:{t:'False Positive Reduction',l:['Rate limit threshold adjustment','Cookie/URI exception rules','Splunk-guided tuning loop','30% FP reduction target']},
+   lc:'ls',lm:'⊕ Tuning rate-based rules — targeting 30% false positive reduction...',plc:'lok',plm:'✓ FP reduced 32% · block rate +18% — approved for production rollout'},
+  {id:'p2s7',c:'p2c7',icon:'🛡',lbl:'FW Manager',bdg:'dep',bdgT:'DEPLOY',sg:0,tA:400,tP:900,
+   tip:{t:'AWS Firewall Manager',l:['WAF v2 policy update','Shield Advanced rule sync','Bot Control policy push','CloudFront + ALB + Route 53']},
+   lc:'lr',lm:'🛡 Firewall Manager: updating WAF v2 policy across all services...',plc:null,plm:null},
+  {id:'p2s8',c:'p2c8',icon:'⊞',lbl:'350+ Accounts',bdg:'dep',bdgT:'DEPLOY',sg:0,tA:400,tP:1200,
+   tip:{t:'Multi-Account Rollout',l:['Terraform workspace per account','CloudFormation StackSets (6 regions)','Progressive ring deployment','Rollback automation ready']},
+   lc:'lr',lm:'⊞ Multi-account rollout: WAF rules → 350+ accounts · 6 regions...',plc:null,plm:null},
+  {id:'p2s9',c:null,icon:'🔔',lbl:'SIEM + Alerts',bdg:'mon',bdgT:'MONITOR',sg:0,tA:400,tP:700,
+   tip:{t:'Alert Integration',l:['ServiceNow auto-ticket creation','Splunk dashboard validation','CloudWatch metric alarms','30% SOC triage reduction']},
+   lc:'lr',lm:'🔔 ServiceNow wired · Splunk dashboards verified · alarms active...',plc:'lok',plm:'✓ WAF rules live · 350+ accounts secured · ServiceNow integrated'}
+ ]},
+/* 3 ─ Vulnerability Management (Qualys) */
+{id:'p3',
+ tab:{name:'Vulnerability Management',sub:'Qualys VMDR · cloud agent lifecycle',num:'10 stages · Infoswift'},
+ rail:{branch:'scheduled/qualys-scan',commit:'trigger: Patch Tuesday + 24h · CVSS + EPSS scoring cycle #112',ctx:'Infoswift Software'},
+ steps:[
+  {id:'p3s0',c:'p3c0',icon:'⏱',lbl:'Scan Trigger',bdg:'trg',bdgT:'TRIGGER',sg:0,tA:300,tP:400,
+   tip:{t:'Scan Scheduler',l:['Patch Tuesday EventBridge rule','New asset detected event','NVD CVE feed auto-trigger','NIST 7-day remediation SLA']},
+   lc:'lr',lm:'▶ Qualys VMDR scan cycle triggered — Patch Tuesday + 24h SLA',plc:null,plm:null},
+  {id:'p3s1',c:'p3c1',icon:'⊙',lbl:'Asset Discovery',bdg:'scn',bdgT:'SCAN',sg:0,tA:400,tP:800,
+   tip:{t:'Cloud Asset Inventory',l:['AWS Config + CSPM sync','EC2, EKS nodes, Lambda fns','RDS, ELB, S3 endpoints','Qualys CSAM auto-inventory']},
+   lc:'lr',lm:'⊙ Asset discovery: syncing AWS Config — 2,847 cloud assets found...',plc:null,plm:null},
+  {id:'p3s2',c:'p3c2',icon:'📡',lbl:'Agent Deploy',bdg:'dep',bdgT:'DEPLOY',sg:0,tA:400,tP:1000,
+   tip:{t:'Qualys Cloud Agent',l:['SSM Run Command deploy','Baked into Golden AMI (primary)','User data script fallback','Auto-registers to Qualys platform']},
+   lc:'lr',lm:'📡 SSM Run Command: deploying Qualys agents to 47 unprotected assets...',plc:null,plm:null},
+  {id:'p3s3',c:'p3c3',icon:'🔬',lbl:'VMDR Scan',bdg:'scn',bdgT:'SCAN',sg:1,tA:400,tP:1800,
+   tip:{t:'Qualys VMDR',l:['Agent-based authenticated scan','Network scan (unauthenticated)','OS + app + middleware CVEs','QID database + WQL queries']},
+   lc:'ls',lm:'🔬 Qualys VMDR: authenticated agent scan across 2,847 assets...',plc:'lwarn',plm:'⚠ VMDR: 1,247 findings — 8 CRITICAL · 142 HIGH · queued for triage'},
+  {id:'p3s4',c:'p3c4',icon:'🌐',lbl:'WAS Scan',bdg:'scn',bdgT:'SCAN',sg:1,tA:400,tP:1500,
+   tip:{t:'Web App Scanning',l:['Qualys WAS scan profiles','API endpoint fuzzing + crawl','OWASP Top 10 test vectors','Authenticated session scan']},
+   lc:'ls',lm:'🌐 Qualys WAS: scanning web applications and API endpoints...',plc:'lwarn',plm:'⚠ WAS: 25 findings — 2 HIGH priority · 23 MEDIUM queued'},
+  {id:'p3s5',c:'p3c5',icon:'⚖',lbl:'Severity Triage',bdg:'sec',bdgT:'SECURITY',sg:0,tA:400,tP:1000,
+   tip:{t:'Risk Prioritization',l:['CVSS v3.1 base score','EPSS probability weighting','TEC model: threat/exposure/crit','CRITICAL triggers AMI rebuild']},
+   lc:'lr',lm:'⚖ CVSS + EPSS: risk-scoring 8 CRITICAL · 142 HIGH findings...',plc:null,plm:null},
+  {id:'p3s6',c:'p3c6',icon:'✎',lbl:'FP Review',bdg:'sec',bdgT:'SECURITY',sg:1,tA:400,tP:900,
+   tip:{t:'False Positive Mgmt',l:['Suppression rule application','Time-boxed waivers (30-day max)','Compensating control logging','Full exception audit trail']},
+   lc:'ls',lm:'✎ Reviewing findings — applying suppression rules and waivers...',plc:'lok',plm:'✓ FP review: 14 suppressed · 8 CRITICAL + 128 HIGH remain actionable'},
+  {id:'p3s7',c:'p3c7',icon:'🎫',lbl:'ITSM Ticket',bdg:'dep',bdgT:'ITSM',sg:0,tA:400,tP:700,
+   tip:{t:'ServiceNow ITSM',l:['Auto-ticket creation by severity','SLA: CRITICAL=24h · HIGH=7d','Rally integration for dev fixes','Auto owner-assignment by tag']},
+   lc:'lr',lm:'🎫 ServiceNow: creating 8 CRITICAL (24h SLA) + 128 HIGH tickets...',plc:null,plm:null},
+  {id:'p3s8',c:'p3c8',icon:'⊕',lbl:'Patch Apply',bdg:'ptch',bdgT:'PATCH',sg:0,tA:400,tP:1200,
+   tip:{t:'Remediation',l:['AWS Patch Manager groups','Golden AMI rebuild (CRITICAL)','SSM Run Command patching','Kernel live-patch where eligible']},
+   lc:'lr',lm:'⊕ AWS Patch Manager: applying patches · triggering Golden AMI rebuild...',plc:null,plm:null},
+  {id:'p3s9',c:null,icon:'✓',lbl:'Rescan + Report',bdg:'mon',bdgT:'MONITOR',sg:1,tA:400,tP:1300,
+   tip:{t:'Verification + Reporting',l:['Qualys rescan (same scope)','Zero CRITICAL/HIGH gate enforced','PCI-DSS + HIPAA attestation','Executive compliance dashboard']},
+   lc:'ls',lm:'✓ Qualys rescan: verifying remediation of 8 CRITICAL findings...',plc:'lok',plm:'✓ Rescan: 0 CRITICAL · 0 HIGH unpatched · compliance report generated'}
+ ]}
+];
+
+/* ─── Render ─── */
+function buildPanel(pl){
+  var svg='<svg width="10" height="12" viewBox="0 0 10 12" fill="var(--green)" style="flex-shrink:0"><circle cx="2.5" cy="1.5" r="1.5"/><circle cx="7.5" cy="1.5" r="1.5"/><circle cx="2.5" cy="10.5" r="1.5"/><path d="M2.5 3v6M7.5 3c0 3-5 4-5 6" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round"/></svg>';
+  var h='<div class="pl-wrapper">';
+  h+='<div class="pl-rail"><div class="pl-rail-ctx">'+svg+'<span class="pl-rail-branch">'+pl.rail.branch+'</span></div><div class="pl-rail-commit">'+pl.rail.commit+'</div><div class="pl-sdot" id="psd-'+pl.id+'"></div></div>';
+  h+='<div class="pl-body"><div class="pl-track">';
+  pl.steps.forEach(function(s){
+    h+='<div class="p-stage idle" id="'+s.id+'">';
+    h+='<div class="p-node"><div class="p-ring"></div><span style="font-size:0.9rem;line-height:1">'+s.icon+'</span></div>';
+    h+='<div class="p-lbl">'+s.lbl+'</div>';
+    h+='<div class="p-bdg '+s.bdg+'">'+s.bdgT+'</div>';
+    h+='<div class="p-tip"><strong>'+s.tip.t+'</strong>'+s.tip.l.join('<br>')+'</div>';
+    h+='</div>';
+    if(s.c)h+='<div class="p-conn" id="'+s.c+'"><div class="p-cfill"></div><div class="p-cpkt"></div></div>';
+  });
+  h+='</div></div>';
+  h+='<div class="pl-statusbar"><div class="pl-log" id="pll-'+pl.id+'">Ready — click ↺ Replay to run</div><div class="pl-result" id="plr-'+pl.id+'"></div><button class="btn-pl-replay" data-pid="'+pl.id+'">↺ Replay</button></div>';
+  h+='</div>';
+  return '<div class="pl-panel" id="plpnl-'+pl.id+'">'+h+'</div>';
+}
+function buildTab(pl,i){
+  return '<button class="pl-tab-btn" data-pidx="'+i+'"><span class="pl-tab-name">'+pl.tab.name+'</span><span class="pl-tab-sub">'+pl.tab.sub+'</span><span class="pl-tab-num">'+pl.tab.num+'</span></button>';
+}
+
+var tabBar=document.getElementById('pl-tab-bar');
+var panels=document.getElementById('pl-panels');
+if(!tabBar||!panels)return;
+
+var th='',ph='';
+PL.forEach(function(pl,i){th+=buildTab(pl,i);ph+=buildPanel(pl);});
+tabBar.innerHTML=th;panels.innerHTML=ph;
+tabBar.children[0].classList.add('pl-active');
+panels.children[0].classList.add('pl-active');
+
+/* ─── Tab switching ─── */
+tabBar.addEventListener('click',function(e){
+  var btn=e.target.closest('.pl-tab-btn');
+  if(!btn)return;
+  var idx=parseInt(btn.dataset.pidx);
+  Array.from(tabBar.children).forEach(function(b,i){b.classList.toggle('pl-active',i===idx);});
+  Array.from(panels.children).forEach(function(p,i){p.classList.toggle('pl-active',i===idx);});
+  var pl=PL[idx];resetPL(pl);setTimeout(function(){runPL(pl);},350);
+});
+
+/* ─── Replay ─── */
+panels.addEventListener('click',function(e){
+  if(!e.target.classList.contains('btn-pl-replay'))return;
+  var pid=e.target.dataset.pid;
+  var pl=null;PL.forEach(function(p){if(p.id===pid)pl=p;});
+  if(!pl)return;
+  resetPL(pl);setTimeout(function(){runPL(pl);},350);
+});
+
+/* ─── Scroll trigger ─── */
+var section=document.getElementById('pipeline');
+var fired=false;
+new IntersectionObserver(function(ent){
+  if(ent[0].isIntersecting&&!fired){fired=true;setTimeout(function(){runPL(PL[0]);},700);}
+},{threshold:0.12}).observe(section);
+
+/* ─── Animation ─── */
+var tmrs={};
+function runPL(pl){
+  clearTmrs(pl.id);
+  var dot=document.getElementById('psd-'+pl.id);
+  if(dot)dot.className='pl-sdot pl-sdot-run';
+  var t=0;
+  pl.steps.forEach(function(s){
+    t+=s.tA;
+    (function(step,delay){
+      addTmr(pl.id,setTimeout(function(){
+        var el=document.getElementById(step.id);
+        if(el)el.className='p-stage '+(step.sg?'pls':'plr');
+        setLog(pl.id,step.lc,step.lm);
+      },delay));
+    })(s,t);
+    t+=s.tP;
+    (function(step,delay){
+      addTmr(pl.id,setTimeout(function(){
+        var el=document.getElementById(step.id);
+        if(el)el.className='p-stage '+(step.sg?'plsp':'plp');
+        if(step.plm)setLog(pl.id,step.plc,step.plm);
+        if(step.c){
+          var conn=document.getElementById(step.c);
+          if(conn){
+            var f=conn.querySelector('.p-cfill'),pk=conn.querySelector('.p-cpkt');
+            f.classList.add('go');
+            pk.classList.remove('go');void pk.offsetWidth;pk.classList.add('go');
+          }
+        }
+      },delay));
+    })(s,t);
+    t+=140;
+  });
+  addTmr(pl.id,setTimeout(function(){
+    var dot=document.getElementById('psd-'+pl.id);
+    if(dot)dot.className='pl-sdot pl-sdot-ok';
+    var r=document.getElementById('plr-'+pl.id);
+    if(r){r.textContent='● PASSED';r.style.color='var(--green)';}
+  },t+380));
+}
+function resetPL(pl){
+  clearTmrs(pl.id);
+  var dot=document.getElementById('psd-'+pl.id);if(dot)dot.className='pl-sdot';
+  var r=document.getElementById('plr-'+pl.id);if(r){r.textContent='';r.style.color='';}
+  setLog(pl.id,'','Resetting...');
+  pl.steps.forEach(function(s){
+    var el=document.getElementById(s.id);if(el)el.className='p-stage idle';
+    if(s.c){
+      var conn=document.getElementById(s.c);
+      if(conn){
+        var f=conn.querySelector('.p-cfill');
+        f.style.transition='none';f.style.width='0';f.classList.remove('go');
+        setTimeout(function(){f.style.transition='';},60);
+        conn.querySelector('.p-cpkt').classList.remove('go');
+      }
+    }
+  });
+}
+function setLog(pid,cls,msg){
+  var el=document.getElementById('pll-'+pid);
+  if(el){el.textContent=msg;el.className='pl-log'+(cls?' '+cls:'');}
+}
+function addTmr(pid,id){tmrs[pid]=tmrs[pid]||[];tmrs[pid].push(id);}
+function clearTmrs(pid){(tmrs[pid]||[]).forEach(clearTimeout);tmrs[pid]=[];}
+})();
+
+// ===== FOOTER YEAR =====
+(function(){var el=document.getElementById('footer-year');if(el)el.textContent=new Date().getFullYear();})();
+
+// ===== GLITCH AUTO TRIGGER =====
+(function(){
+  var el=document.querySelector('.hero-name .line2');
+  if(!el)return;
+  setInterval(function(){
+    el.style.animation='glitch-trigger 0.15s ease';
+    setTimeout(function(){el.style.animation='';},200);
+  },4000);
+})();
+</script>
+</body>
+</html>
