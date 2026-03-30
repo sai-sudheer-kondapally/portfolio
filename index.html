@@ -124,7 +124,7 @@ section{padding:100px 0}
 .t-cursor{display:inline-block;width:0.5em;height:1em;background:var(--green);vertical-align:text-bottom;animation:blink 1s step-end infinite}
 
 /* ===== SKILLS ===== */
-#skills{padding-top:100px}
+#skills{background:var(--surface)}
 .skill-groups{display:flex;flex-direction:column;gap:16px}
 .skill-group{background:var(--surface);border:1px solid var(--dim);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition)}
 .skill-group:hover{border-color:rgba(0,229,255,0.15)}
@@ -402,7 +402,7 @@ section{padding:100px 0}
 }
 
 /* ===== RESEARCH ===== */
-#research{}
+#research{background:var(--bg)}
 .research-card{position:relative;background:var(--surface);border-radius:12px;overflow:hidden;padding:48px;margin-bottom:48px}
 .research-card::before{content:'';position:absolute;inset:0;border-radius:12px;padding:1px;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--orange),var(--cyan));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:border-spin 4s linear infinite;background-size:300% 300%}
 @keyframes border-spin{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
@@ -424,7 +424,7 @@ section{padding:100px 0}
 /* ===== CONTACT ===== */
 #contact{background:var(--surface)}
 .contact-subtitle{font-size:0.95rem;color:var(--muted);margin-top:-32px;margin-bottom:48px;max-width:500px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-grid{display:grid;grid-template-columns:minmax(260px,auto) 1fr;gap:48px;align-items:start}
 .contact-links{display:flex;flex-direction:column;gap:4px}
 .contact-row{display:flex;align-items:center;gap:16px;padding:18px 16px;border:1px solid var(--dim);border-radius:var(--radius);transition:all var(--transition);color:var(--muted);font-size:0.9rem}
 .contact-row:hover{border-color:rgba(0,229,255,0.3);color:var(--cyan);transform:translateX(4px);background:rgba(0,229,255,0.03)}
